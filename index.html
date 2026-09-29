@@ -604,6 +604,16 @@ body{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!importa
 #authLogo,#launchScreen .launch-logo{content:url("tiara-logo.png")!important;object-fit:contain!important;}
 @media(max-width:650px){#authGate,#launchScreen{background-attachment:scroll!important;background-position:center center!important}.auth-card{width:min(92vw,440px)!important;padding:20px!important}.auth-logo{max-width:min(72vw,300px)!important}}
 </style>
+
+<style id="daily-activity-external-bg-github-final">
+/* Daily Activity background disimpan sebagai file terpisah di GitHub: assets/daily-activity-bg.webp */
+#activity::before{
+  background:url("assets/daily-activity-bg.webp") center center/cover no-repeat fixed!important;
+}
+@media(max-width:900px){
+  #activity::before{background-attachment:scroll!important;background-position:center center!important;}
+}
+</style>
 </head><body><div id="authGate"><div class="auth-card"><img class="auth-logo" id="authLogo" src="assets/embedded-04.png" alt="Logo"><h2 id="authFarmName">Tiara Fishery</h2><div class="note" style="text-align:center">Masuk untuk membuka data farm Anda.</div><div class="auth-tabs"><button id="tabSignin" class="active" type="button" onclick="setAuthMode('signin')">Sign In</button><button id="tabSignup" type="button" onclick="setAuthMode('signup')">Sign Up</button></div><form class="auth-form" onsubmit="submitAuth(event)"><input id="authName" placeholder="Nama pengguna" style="display:none"><input id="authEmail" type="email" placeholder="Email" required autocomplete="email"><div class="password-wrap">
 <input id="authPassword" type="password" placeholder="Password (minimal 6 karakter)" required minlength="6" autocomplete="current-password">
 <button type="button" class="password-toggle" id="passwordToggle" onclick="toggleAuthPassword()" aria-label="Tampilkan password" title="Tampilkan password">👁 <span>Show</span></button>
