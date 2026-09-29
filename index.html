@@ -1,0 +1,1727 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tiara Fishery</title><style>
+:root{--b:#078de5;--g:#35b96a;--o:#ff9818;--r:#ef3340;--n:#0e2638;--bg:#f4f8fb;--line:#dce7ed}*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial;background:var(--bg);color:var(--n)}button,input,select{font:inherit}.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}.side{background:linear-gradient(180deg,#07395a,#056b7b);padding:18px;color:white}.brand{background:white;border-radius:16px;padding:8px}.brand img{width:100%;max-height:115px;object-fit:contain}.nav button{display:block;width:100%;margin:7px 0;padding:12px;border:0;border-radius:10px;background:transparent;color:white;text-align:left;font-weight:700}.nav button.active,.nav button:hover{background:#ffffff22}.main{min-width:0}.top{position:sticky;top:0;z-index:5;background:#fffc;padding:12px 22px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between;backdrop-filter:blur(10px)}.content{padding:22px;max-width:1500px;margin:auto}.page{display:none}.page.active{display:block}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 25px #1231}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.kpi{padding:16px;border-radius:15px;color:white;min-height:100px}.kpi b{font-size:28px;display:block;margin-top:7px}.blue{background:linear-gradient(135deg,#3f82e8,#09aee8)}.green{background:linear-gradient(135deg,#25a95b,#58c66e)}.orange{background:linear-gradient(135deg,#ff8c00,#ffb12d)}.red{background:linear-gradient(135deg,#ed2738,#ff5c64)}.purple{background:linear-gradient(135deg,#6c5ce7,#8f7cf4)}.cyan{background:linear-gradient(135deg,#05a5b6,#31c9c3)}h2,h3{margin-top:0}.form{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.field label{display:block;font-size:12px;font-weight:800;color:#536978;margin-bottom:5px}.field input,.field select{width:100%;padding:10px;border:1px solid #ccdce5;border-radius:9px;background:white}.section{margin:18px 0 10px;font-weight:800}.subcard{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfdff}.subhead{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:14px;font-weight:900}.setup-table input{width:100%;min-width:90px;padding:9px;border:1px solid #ccdce5;border-radius:8px}.setup-table th{text-align:center}.setup-table td{text-align:center}.setup-table td:first-child{text-align:left;font-weight:800}.hint{padding:10px 12px;border-radius:10px;background:#eef8ff;color:#3f6174;font-size:12px;margin-top:10px}.btn{border:0;border-radius:10px;padding:10px 14px;background:var(--b);color:white;font-weight:800;cursor:pointer}.btn.g{background:var(--g)}.btn.r{background:var(--r)}table{width:100%;border-collapse:collapse;font-size:12px;background:white}th{background:#0d6fa5;color:white;position:sticky;top:0}th,td{padding:8px;border:1px solid #d9e4ea;text-align:right}th:first-child,td:first-child{text-align:left}.table{overflow:auto;max-height:570px;border-radius:12px;border:1px solid var(--line)}.note{font-size:12px;color:#6c7e89}.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.bar select,.bar input{padding:9px;border:1px solid var(--line);border-radius:9px}.today{background:#fff4d8!important}.actual{background:#eafff1!important}.chart{height:220px;width:100%}.legend{font-size:11px;color:#667}.finance td:nth-child(4){font-weight:800}.pos{color:#158a4b}.neg{color:#d52d3b}@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:static}.form,.g4,.g3,.g2{grid-template-columns:1fr 1fr}.nav{display:flex;overflow:auto}.nav button{min-width:150px}.top{position:static}}@media(max-width:560px){.form,.g4,.g3,.g2{grid-template-columns:1fr}.content{padding:12px}}
+
+body{background:linear-gradient(#eef9ffdd,#f6fbffef),url("assets/asset-001.png") center/cover fixed no-repeat}
+.main{background:linear-gradient(180deg,#ffffff10,#f5fbffe6)}
+#dashboard{position:relative}#dashboard:before{content:"";position:absolute;inset:-22px -22px auto -22px;height:285px;background:linear-gradient(90deg,#04385f99,#078de522),url("assets/asset-001.png") center 42%/cover no-repeat;z-index:-1;border-radius:0 0 28px 28px}
+#dashboard h2{color:white;text-shadow:0 2px 8px #003a66}#dashboard .card,#dashboard .kpi{box-shadow:0 10px 30px #063b5c25}
+.project-hero{padding:18px;border-radius:18px;color:white;background:linear-gradient(90deg,#053b63dd,#078de599);margin-bottom:14px;box-shadow:0 12px 30px #063b5c33}.project-hero b{font-size:32px;display:block}
+@media(max-width:900px){#dashboard:before{height:420px}}
+
+/* V5 visual: closer to supplied dashboard */
+#dashboard .hero{min-height:210px;padding:28px 34px;display:flex;flex-direction:column;justify-content:flex-end;border-radius:22px;box-shadow:0 14px 35px #0b4c7b33;background-position:center 43%;}
+#dashboard .hero b{font-size:46px;line-height:1.05;text-shadow:0 3px 12px #003a66aa}#dashboard .hero span:first-child{width:max-content;background:#10b8c7;color:white;padding:7px 16px;border-radius:18px;font-weight:800}
+#dashboard .kpi{backdrop-filter:blur(10px);border:1px solid #ffffffcc;box-shadow:0 7px 20px #174d7220;border-radius:16px;min-height:82px}#dashboard .kpi b{font-size:24px}
+#dashboard .card{border:1px solid #d9e8f4;box-shadow:0 8px 24px #174d7218;border-radius:16px}.top{background:#f8fcffff;border-bottom:1px solid #dceaf5;box-shadow:0 3px 16px #174d7215}.side{background:linear-gradient(180deg,#063766,#082f55 70%,#07446b);box-shadow:8px 0 28px #06376633}.nav button.active{background:linear-gradient(90deg,#0d8df0,#237be1);box-shadow:0 8px 18px #0098ff40}.content{max-width:1450px;margin:auto}
+@media(max-width:900px){#dashboard .hero b{font-size:34px}#dashboard .hero{min-height:160px}.form,#seedFields{grid-template-columns:1fr 1fr!important}}
+
+/* V6 polish */
+.summary-card{position:relative;overflow:hidden;border:1px solid #dce9f5;background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(240,249,255,.94));box-shadow:0 14px 32px rgba(8,65,110,.10)}
+.summary-card:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;top:-65px;background:linear-gradient(135deg,#3bb8ff33,#55d88933)}
+.summary-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}.summary-icon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:23px;background:#e8f6ff}.summary-title{font-weight:900;color:#0a4478}.summary-sub{font-size:12px;color:#71869a;margin-top:2px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.mini-stat{padding:10px 12px;border-radius:13px;background:#fff;border:1px solid #e5eef6}.mini-stat small{display:block;color:#71869a;font-size:11px}.mini-stat b{display:block;margin-top:3px;color:#123d62}
+.rec-list{display:grid;gap:9px}.rec-item{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:14px;background:linear-gradient(90deg,#f7fbff,#fff);border:1px solid #e1edf7}.rec-item .ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#eaf7ff;font-size:19px;flex:0 0 auto}.rec-item b{color:#0c4f84}.rec-item small{display:block;color:#71869a;margin-top:3px;line-height:1.35}
+.report-cover{min-height:270px;border-radius:22px;padding:28px;color:white;background:linear-gradient(90deg,rgba(3,45,83,.9),rgba(0,126,177,.55)),var(--hero-bg);background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end}.report-cover h1{font-size:36px;margin:0}.report-cover p{margin:5px 0}.report-section{margin-top:16px}.report-photo{height:190px;border-radius:18px;background:var(--hero-bg);background-size:cover;background-position:center}.report-actions{display:flex;gap:10px;justify-content:flex-end;margin-bottom:14px}
+.finance-report{overflow:hidden}.finance-report h3{margin-bottom:12px}.finance-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.finance-kpi{padding:15px;border-radius:16px;background:linear-gradient(135deg,#f8fbff,#eef8ff);border:1px solid #dbeaf5}.finance-kpi small{display:block;color:#60758a;font-weight:700}.finance-kpi b{display:block;font-size:21px;color:#083b66;margin-top:5px}.finance-kpi.good{background:linear-gradient(135deg,#effff3,#e0f8e7)}.finance-kpi.warn{background:linear-gradient(135deg,#fff8e8,#fff0c7)}.finance-kpi.purple{background:linear-gradient(135deg,#f7f0ff,#eee2ff)}.report-fin-table{width:100%;border-collapse:collapse;font-size:12px}.report-fin-table th{background:#073f6d;color:white;padding:9px;text-align:left}.report-fin-table td{padding:8px;border-bottom:1px solid #e4edf4}.report-fin-table tr.total td{font-weight:800;background:#eef7ff}.report-fin-table tr.profit td{font-weight:900;background:#e9faee;color:#087a35}.report-fin-table td.num{text-align:right;font-variant-numeric:tabular-nums}.finance-note{padding:12px 14px;border-radius:14px;background:#f4f9fc;color:#466477;font-size:12px;margin-top:12px}
+@media(max-width:900px){.finance-kpi-grid{grid-template-columns:repeat(2,1fr)}}
+@page{size:A4;margin:10mm}@media print{html,body{margin:0!important;padding:0!important;height:auto!important;background:#fff!important}.app,.main,.content{margin:0!important;padding:0!important;min-height:0!important;height:auto!important}.side,.top,.report-actions{display:none!important}.page{display:none!important;margin:0!important;padding:0!important}#summary.page{display:block!important;position:static!important;visibility:visible!important}#summaryBody{display:block!important;margin:0!important;padding:0!important}#summaryBody>:first-child{break-before:auto!important;page-break-before:auto!important;margin-top:0!important}.card,.kpi,.report-cover,.finance-kpi{break-inside:avoid;page-break-inside:avoid;box-shadow:none!important}.report-cover{min-height:210px!important;break-before:auto!important;page-break-before:auto!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}#summary h2{display:none!important}table{break-inside:auto}tr{break-inside:avoid;page-break-inside:avoid}}
+
+/* Daily Activity background - uploaded image */
+#activity{position:relative;isolation:isolate;min-height:calc(100vh - 110px);padding:22px;border-radius:22px;overflow:hidden}
+#activity::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/asset-002.png") center center/cover no-repeat fixed}
+#activity::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,35,59,.25),rgba(4,55,82,.42))}
+#activity>h2,#activity>.bar h2{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+#activity>.bar{background:rgba(255,255,255,.12);padding:12px;border-radius:14px;backdrop-filter:blur(5px)}
+#activity .card,#activity .kpi{box-shadow:0 12px 30px rgba(0,31,55,.20)}
+
+/* Project & Project: setiap nomor tertutup saat pertama dibuka */
+.setup-collapse{padding:0;overflow:hidden}
+.setup-collapse>summary{list-style:none;cursor:pointer;padding:18px 20px;font-size:17px;font-weight:900;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none}
+.setup-collapse>summary::-webkit-details-marker{display:none}
+.setup-collapse>summary::after{content:"＋";width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#eef6fb;color:#0d6fa5;font-size:20px;line-height:1;flex:0 0 auto}
+.setup-collapse[open]>summary::after{content:"−"}
+.setup-collapse[open]>summary{border-bottom:1px solid var(--line)}
+.setup-collapse-body{padding:18px}
+.setup-final-action{display:flex;justify-content:flex-end;margin:18px 0 4px}
+.setup-save-btn{min-width:240px;padding:13px 20px;font-size:14px;box-shadow:0 8px 20px rgba(53,185,106,.22)}
+@media(max-width:560px){.setup-final-action{display:block}.setup-save-btn{width:100%;min-width:0}}
+
+#summary .report-actions{display:flex!important;justify-content:flex-end} 
+
+
+
+#setup.no-project>.bar,#setup.no-project>p.note,#setup.no-project>details,#setup.no-project>.setup-final-action{display:none!important}
+</style>
+<style>
+/* V8 dashboard emphasis */
+.dashboard-summary-wrap{width:100%}.dashboard-summary-card{padding:0!important;overflow:hidden;border:1px solid rgba(255,255,255,.75);box-shadow:0 18px 45px rgba(5,61,105,.18)!important;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(239,249,255,.94))!important}.dashboard-summary-card .summary-card{padding:26px!important;background:transparent!important;border:0!important;box-shadow:none!important}.dashboard-summary-card .summary-head{padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid #d9eaf5}.dashboard-summary-card .summary-icon{width:62px;height:62px;font-size:30px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#dff5ff,#dffbe8);box-shadow:inset 0 0 0 1px rgba(14,165,233,.15)}.dashboard-summary-card .summary-title{font-size:25px!important;font-weight:900!important;color:#073b67}.dashboard-summary-card .summary-sub{font-size:14px!important;margin-top:4px}.cycle-summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}.cycle-summary-grid .mini-stat{min-height:112px;padding:18px!important;border-radius:18px!important;background:linear-gradient(145deg,#fff,#f4fbff)!important;border:1px solid #d9edf8!important;box-shadow:0 8px 20px rgba(14,83,126,.07);display:flex;flex-direction:column;justify-content:center}.cycle-summary-grid .mini-stat small{font-size:12px!important;text-transform:uppercase;letter-spacing:.5px;color:#5d7890}.cycle-summary-grid .mini-stat b{font-size:21px!important;color:#063f70;margin-top:6px}.cycle-summary-grid .mini-stat em{font-style:normal;font-size:12px;color:#5f7487;margin-top:5px}.activity-layout{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(560px,1.55fr);gap:18px;align-items:start}.actual-card{padding:20px!important}.recommendation-card{padding:0!important;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(241,250,255,.97))!important;box-shadow:0 16px 38px rgba(7,69,111,.16)!important}.recommendation-card .summary-card{padding:24px!important;background:transparent!important;border:0!important;box-shadow:none!important}.recommendation-card .summary-head{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #dcecf6}.recommendation-card .summary-icon{width:58px;height:58px;font-size:28px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#fff3cf,#e6fbff)}.recommendation-card .summary-title{font-size:24px!important}.recommendation-card .summary-sub{font-size:13px!important}.recommendation-card .rec-list{display:grid;gap:14px}.recommendation-card .rec-item{padding:17px!important;border-radius:18px!important;background:#fff!important;border:1px solid #e0edf5!important;box-shadow:0 6px 16px rgba(15,70,105,.06)}.recommendation-card .rec-item b{font-size:16px}.recommendation-card .rec-item small{font-size:13px;line-height:1.55}.feed-detail>div:last-child>div{gap:12px!important}.feed-detail>div:last-child>div>div{padding:15px!important;border-radius:16px!important}.feed-detail strong{font-size:20px!important}@media(max-width:1100px){.cycle-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.activity-layout{grid-template-columns:1fr}}@media(max-width:650px){.cycle-summary-grid{grid-template-columns:1fr!important}.feed-detail>div:last-child>div{grid-template-columns:1fr!important}}
+</style>
+
+<style id="tiara-visual-refresh">
+:root{--b:#078de5;--g:#2fbd66;--o:#ff9f1a;--r:#ef476f;--n:#0b3155;--bg:#eaf6fb;--line:#d7e7f1;--hero-bg:url("assets/asset-001.png");--pond-bg:url("assets/asset-003.png");}
+body{background:linear-gradient(rgba(239,249,255,.90),rgba(247,252,255,.94)),var(--pond-bg) center/cover fixed no-repeat;color:#0a3155}
+.app{grid-template-columns:250px 1fr}
+.side{background:linear-gradient(180deg,rgba(4,47,88,.97),rgba(5,71,111,.96));box-shadow:8px 0 30px rgba(0,44,82,.25);padding:14px 12px;position:relative;overflow:hidden}
+.side:after{content:"";position:absolute;inset:auto -80px -80px -80px;height:260px;background:var(--pond-bg) center/cover;opacity:.22;mask-image:linear-gradient(to bottom,transparent,#000)}
+.brand{background:transparent!important;padding:2px!important;border-radius:0!important;position:relative;z-index:1}
+.brand img{max-height:105px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.18))}
+.side>h3{text-align:center;margin:5px 0 18px;font-size:15px;letter-spacing:.7px;color:#dff5ff;position:relative;z-index:1}
+.nav{position:relative;z-index:2}.nav button{padding:13px 14px;border-radius:12px;margin:6px 0;font-weight:700;color:#edf8ff}
+.nav button.active,.nav button:hover{background:linear-gradient(90deg,#0c9cf1,#277bdc)!important;box-shadow:0 8px 18px rgba(0,153,255,.28)}
+.top{margin:12px 18px 0;border:1px solid rgba(255,255,255,.9);border-radius:14px;background:rgba(250,253,255,.91)!important;box-shadow:0 10px 28px rgba(13,70,112,.13);backdrop-filter:blur(16px);padding:10px 18px}
+.top #title{font-size:15px;color:#0a3155}.top select{background:#f8fcff;border:1px solid #cfe1ed!important;font-weight:700}
+.content{max-width:1540px;padding:18px 20px 28px}
+.page>h2,.page>.bar h2{color:#073e70;text-shadow:0 1px #fff;font-size:22px}
+.card,.subcard,.table{border-color:rgba(209,228,240,.95)!important}
+.card{background:rgba(255,255,255,.94)!important;box-shadow:0 10px 28px rgba(10,65,105,.10)!important;backdrop-filter:blur(8px)}
+.subcard{background:rgba(250,253,255,.94)!important}
+.field input,.field select,.bar input,.bar select{border:1px solid #cddfea!important;background:rgba(255,255,255,.96)!important}
+th{background:linear-gradient(180deg,#0c73ac,#075d94)!important}
+.btn{background:linear-gradient(135deg,#078de5,#126fd1);box-shadow:0 6px 14px rgba(7,141,229,.22)}.btn.g{background:linear-gradient(135deg,#28ad5b,#43c974)}.btn.r{background:linear-gradient(135deg,#e9364d,#f15a68)}
+#dashboard{position:relative}
+#dashboard:before{content:"";position:absolute;left:-20px;right:-20px;top:-18px;height:430px;background:linear-gradient(180deg,rgba(3,42,74,.06),rgba(235,247,253,.05) 68%,#eef8fd 100%),url("assets/asset-004.png") center 44%/cover no-repeat;border-radius:0 0 28px 28px;z-index:-1;filter:saturate(1.03)}
+#dashboard>h2{color:white;text-shadow:0 2px 10px rgba(0,44,79,.7);margin:4px 0 14px}
+#dashboard .project-hero{min-height:230px;padding:28px 32px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(90deg,rgba(3,49,86,.76),rgba(4,95,145,.18),rgba(0,0,0,0))!important;background-color:transparent!important;border:1px solid rgba(255,255,255,.38);box-shadow:0 16px 38px rgba(5,56,91,.24);backdrop-filter:none}
+#dashboard .project-hero span:first-child{width:max-content;background:#0da9cc;padding:7px 15px;border-radius:20px;font-weight:900;box-shadow:0 5px 14px rgba(0,0,0,.12)}
+#dashboard .project-hero b{font-size:46px;line-height:1.05;text-shadow:0 4px 14px rgba(0,37,67,.55);margin:7px 0 3px}
+#dashboard #dashKpi{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+#dashboard .kpi{color:#0a3155!important;background:rgba(255,255,255,.93)!important;border:1px solid rgba(255,255,255,.95)!important;box-shadow:0 8px 22px rgba(13,65,102,.13)!important;min-height:94px;padding:15px 16px;position:relative;overflow:hidden}
+#dashboard .kpi:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#078de5}#dashboard .kpi.green:before{background:#31b95f}#dashboard .kpi.orange:before{background:#ff9c18}#dashboard .kpi.red:before{background:#ef476f}#dashboard .kpi.purple:before{background:#7957d5}#dashboard .kpi.cyan:before{background:#00a6c7}
+#dashboard .kpi b{font-size:23px;color:#076ec5}#dashboard .kpi.green b{color:#148445}#dashboard .kpi.orange b{color:#d66a00}#dashboard .kpi.red b{color:#d92e4d}#dashboard .kpi.purple b{color:#6340c5}#dashboard .kpi.cyan b{color:#078ca5}
+.dashboard-summary-card{background:rgba(255,255,255,.94)!important}.cycle-summary-grid .mini-stat{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(238,248,254,.96))!important}
+.kpi{box-shadow:0 8px 20px rgba(13,70,110,.12)}
+.blue{background:linear-gradient(135deg,#188fe4,#37b7eb)}.green{background:linear-gradient(135deg,#23a85a,#55c875)}.orange{background:linear-gradient(135deg,#f28a0a,#ffb83d)}.red{background:linear-gradient(135deg,#e93a50,#ff6b78)}.purple{background:linear-gradient(135deg,#7054d7,#9b7df1)}.cyan{background:linear-gradient(135deg,#069ab2,#2cc8c2)}
+.report-cover{background:linear-gradient(90deg,rgba(3,45,83,.88),rgba(0,126,177,.28)),url("assets/asset-001.png") center/cover!important}.report-photo{background:url("assets/asset-003.png") center/cover!important}
+@media(max-width:1200px){#dashboard #dashKpi{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.top{margin:0;border-radius:0}#dashboard:before{height:360px}#dashboard #dashKpi{grid-template-columns:repeat(2,1fr)}#dashboard .project-hero b{font-size:34px}}@media(max-width:560px){#dashboard #dashKpi{grid-template-columns:1fr}#dashboard .project-hero{min-height:190px;padding:22px}}
+</style>
+
+<style id="dashboard-background-update">
+/* Dashboard background updated from user-provided pond image */
+#dashboard:before{background:linear-gradient(180deg,rgba(3,42,74,.06),rgba(235,247,253,.05) 68%,#eef8fd 100%),url("assets/asset-003.png") center top/cover no-repeat!important;}
+</style>
+
+<style id="sidebar-refresh-v2">
+.app{grid-template-columns:248px 1fr}
+.side{position:relative;overflow:hidden;min-height:100vh;padding:20px 12px 260px;background:#d9dde2;color:#0c3153;border-right:1px solid rgba(25,63,91,.12);box-shadow:5px 0 22px rgba(12,49,83,.10)}
+.side::before{content:"";position:absolute;inset:auto 0 0 0;height:285px;background:linear-gradient(180deg,rgba(217,221,226,1) 0%,rgba(217,221,226,.28) 24%,rgba(217,221,226,.04) 52%),url("assets/asset-001.png") center bottom/cover no-repeat;z-index:0}
+.side>*{position:relative;z-index:1}
+.brand{background:transparent!important;border-radius:0!important;padding:0 10px 5px!important;box-shadow:none!important}
+.brand img{width:100%!important;max-height:125px!important;object-fit:contain!important;filter:none!important}
+.side>h3{margin:0 0 18px;text-align:center;color:#123b5c;font-size:15px;letter-spacing:.2px}
+.nav button{display:block;width:100%;margin:5px 0;padding:13px 16px;border:0;border-radius:12px;background:transparent;color:#173c5b;text-align:left;font-weight:800;font-size:14px;box-shadow:none;transition:.18s ease}
+.nav button:hover{background:rgba(255,255,255,.58);color:#075b9c;transform:translateX(2px)}
+.nav button.active{background:linear-gradient(135deg,#149ce8,#287ce0);color:#fff;box-shadow:0 8px 18px rgba(24,125,213,.24)}
+@media(max-width:900px){.side{min-height:auto;padding-bottom:190px}.side::before{height:210px}}
+</style>
+
+<style id="final-print-fix">
+@media print{
+  @page{size:A4 portrait;margin:10mm;}
+  html,body{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:#fff!important;}
+  .app{display:block!important;width:100%!important;min-height:0!important;}
+  .side,.top,.report-actions{display:none!important;}
+  .main,.content{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;}
+  .page{display:none!important;}
+  #summary.page,#summary.page.active{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;}
+  #summaryBody{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;}
+  #summary .grid{width:100%!important;}
+  #summary .g4{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+  #summary .g3{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  #summary .g2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  #summary .report-cover{width:100%!important;min-height:210px!important;box-sizing:border-box!important;}
+  #summary .card,#summary .kpi,#summary .finance-kpi{box-sizing:border-box!important;}
+  #summary .table{max-height:none!important;overflow:visible!important;}
+  #summary table{width:100%!important;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+}
+</style>
+
+
+<style id="mobile-module-navigation-v1">
+.mobile-back-btn{display:none}
+@media(max-width:900px){
+  body.mobile-home .app{display:block;min-height:100vh}
+  body.mobile-home .side{display:block;min-height:100vh;padding:24px 16px 220px;border-right:0}
+  body.mobile-home .side::before{height:230px}
+  body.mobile-home .brand{max-width:280px;margin:0 auto}
+  body.mobile-home .side>h3{text-align:center;font-size:20px;margin:6px 0 24px}
+  body.mobile-home .nav{display:grid!important;grid-template-columns:1fr;gap:10px;overflow:visible}
+  body.mobile-home .nav button{min-width:0!important;margin:0!important;padding:17px 18px!important;background:rgba(255,255,255,.72)!important;border:1px solid rgba(12,80,125,.10)!important;border-radius:15px!important;color:#173c5b!important;box-shadow:0 5px 16px rgba(20,70,105,.08)!important;font-size:15px!important;transform:none!important}
+  body.mobile-home .nav button.active{background:rgba(255,255,255,.72)!important;color:#173c5b!important}
+  body.mobile-home .main{display:none!important}
+
+  body.mobile-module .side{display:none!important}
+  body.mobile-module .app{display:block!important;min-height:100vh}
+  body.mobile-module .main{display:block!important;width:100%!important}
+  body.mobile-module .top{display:flex!important;position:sticky!important;top:0!important;z-index:20!important;padding:10px 12px!important}
+  body.mobile-module .top>div:first-child{min-width:0;flex:1}
+  body.mobile-module .top>.bar{max-width:62%;justify-content:flex-end;flex-wrap:nowrap} 
+  body.mobile-module #projectSelect{max-width:120px;min-width:0}
+  body.mobile-module #addProjectBtn{display:inline-flex!important;align-items:center;justify-content:center;white-space:nowrap;flex:0 0 auto}
+  body.mobile-module .content{padding:12px!important;width:100%!important;max-width:none!important}
+  .mobile-back-btn{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:10px;padding:9px 11px;background:#eaf4fb;color:#075b9c;font-weight:900;cursor:pointer;margin-right:8px}
+  body.mobile-module .page.active{width:100%;overflow:visible}
+  body.mobile-module .table{max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
+}
+@media(min-width:901px){.mobile-back-btn{display:none!important}}
+</style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#056b7b">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<style id="launch-screen-style">
+#launchScreen{position:fixed;inset:0;z-index:99999;background:#061d2d url('assets/splash.jpg') center center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;transition:opacity .45s ease,visibility .45s ease}
+#launchScreen::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,30,50,.04),rgba(0,25,45,.30))}
+#launchScreen .launch-box{position:relative;z-index:1;margin-bottom:max(42px,env(safe-area-inset-bottom));width:min(72vw,420px);text-align:center}
+#launchScreen .launch-logo{width:100%;height:auto;filter:drop-shadow(0 5px 14px rgba(0,0,0,.25))}
+#launchScreen .launch-loader{width:46px;height:46px;margin:18px auto 0;border:4px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:tiaraSpin .85s linear infinite}
+#launchScreen.hide{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes tiaraSpin{to{transform:rotate(360deg)}}
+@media(min-width:901px){#launchScreen .launch-box{width:min(38vw,430px)}}
+</style>
+<style id="weight-chart-final">.weight-chart-card{overflow:hidden}.weight-chart-card svg text{font-family:Inter,Segoe UI,Arial,sans-serif}@media(max-width:560px){.weight-chart-card{padding:14px!important}.weight-chart-card .summary-title{font-size:18px!important}}@media print{.weight-chart-card{break-inside:avoid;page-break-inside:avoid}.weight-chart-card svg{min-width:0!important;width:100%!important}}</style>
+<style id="mobile-pdf-lightweight-fix">
+/* PDF mobile: pertahankan layout A4 penuh tetapi hindari embedding foto/background besar agar file PDF lebih ringan. */
+@media print{
+  body{background:#fff!important;}
+  #summary{width:190mm!important;max-width:190mm!important;margin:0 auto!important;}
+  #summaryBody{width:190mm!important;max-width:190mm!important;}
+  #summary .report-cover{background:#0b5f91!important;min-height:52mm!important;}
+  #summary .report-photo{display:none!important;}
+  #summary .grid.g2.report-section:has(.report-photo){grid-template-columns:1fr!important;}
+  #summary .weight-chart-card svg{width:100%!important;max-width:100%!important;height:auto!important;}
+}
+</style>
+<style id="pdf-complete-final-fix">
+@page{size:A4 portrait;margin:9mm}
+@media print{
+html,body,.app,.main,.content{width:100%!important;max-width:none!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;overflow:visible!important;background:#fff!important}
+body{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+.side,.top,.report-actions{display:none!important}.page{display:none!important}
+#summary.page,#summary.page.active{display:block!important;visibility:visible!important;width:190mm!important;max-width:190mm!important;height:auto!important;margin:0 auto!important;padding:0!important;overflow:visible!important}
+#summaryBody{display:block!important;visibility:visible!important;width:100%!important;max-width:100%!important;height:auto!important;overflow:visible!important}
+#summaryBody *{visibility:visible!important}
+#summary .report-cover{display:flex!important;min-height:55mm!important;height:auto!important;background:linear-gradient(90deg,rgba(3,45,83,.88),rgba(0,126,177,.28)),url("assets/asset-001.png") center/cover no-repeat!important;break-inside:avoid!important;page-break-inside:avoid!important}
+#summary .report-photo{display:block!important;min-height:45mm!important;height:45mm!important;background:url("assets/asset-003.png") center/cover no-repeat!important}
+#summary .grid.g2.report-section:has(.report-photo){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+#summary .grid{display:grid!important;width:100%!important}#summary .g4{grid-template-columns:repeat(4,minmax(0,1fr))!important}#summary .g3{grid-template-columns:repeat(3,minmax(0,1fr))!important}#summary .g2{grid-template-columns:repeat(2,minmax(0,1fr))!important}#summary .finance-kpi-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+#summary .table,#summary .finance-report,#summary .weight-chart-card{max-height:none!important;height:auto!important;overflow:visible!important}
+#summary table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important;font-size:9.5px!important}#summary thead{display:table-header-group!important}#summary tbody{display:table-row-group!important}#summary tr{break-inside:avoid!important;page-break-inside:avoid!important}
+#summary .card,#summary .kpi,#summary .finance-kpi,#summary .mini-stat,#summary .rec-item{height:auto!important;max-height:none!important;overflow:visible!important;box-shadow:none!important;break-inside:avoid!important;page-break-inside:avoid!important}
+#summary .weight-chart-card svg,#summary svg{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;overflow:visible!important}
+#summary th,#summary td{padding:5px 6px!important;white-space:normal!important}
+}
+</style>
+
+<style id="pdf-light-photo-logo-final">
+@media print{
+  /* Tetap A4, tetapi elemen visual dibuat ringan untuk browser/HP. */
+  @page{size:A4 portrait;margin:9mm}
+  #summary.page,#summary.page.active{
+    width:190mm!important;max-width:190mm!important;margin:0 auto!important;
+    background:#fff!important;
+  }
+
+  /* Logo dan gambar utama tetap tampil. */
+  #summary img{
+    display:block!important;
+    visibility:visible!important;
+    max-width:100%!important;
+    height:auto!important;
+    object-fit:contain!important;
+  }
+  #summary .report-cover{
+    display:flex!important;
+    min-height:46mm!important;
+    background:
+      linear-gradient(90deg,rgba(3,45,83,.86),rgba(0,126,177,.30)),
+      url("assets/asset-001.png") center/cover no-repeat!important;
+    box-shadow:none!important;
+  }
+  #summary .report-photo{
+    display:block!important;
+    height:38mm!important;
+    min-height:38mm!important;
+    background:url("assets/asset-003.png") center/cover no-repeat!important;
+    box-shadow:none!important;
+  }
+  #summary .grid.g2.report-section:has(.report-photo){
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+  /* Hilangkan efek mahal saat rasterisasi PDF tanpa menghilangkan konten/foto. */
+  #summary *,
+  #summary *::before,
+  #summary *::after{
+    box-shadow:none!important;
+    text-shadow:none!important;
+    filter:none!important;
+    backdrop-filter:none!important;
+  }
+  #summary .card,
+  #summary .subcard,
+  #summary .finance-kpi,
+  #summary .mini-stat,
+  #summary .rec-item{
+    background-color:#fff!important;
+  }
+
+  /* Grafik tetap ada sebagai SVG/vector, jauh lebih ringan daripada screenshot. */
+  #summary svg{
+    display:block!important;
+    visibility:visible!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+  }
+
+  /* Hindari clipping dan duplikasi raster pada tabel panjang. */
+  #summary .table,
+  #summary .finance-report,
+  #summary .weight-chart-card{
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  #summary table{
+    width:100%!important;
+    border-collapse:collapse!important;
+    font-size:9.5px!important;
+  }
+  #summary thead{display:table-header-group!important}
+  #summary tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  #summary .card,
+  #summary .finance-kpi,
+  #summary .mini-stat,
+  #summary .report-cover{
+    break-inside:avoid!important;
+    page-break-inside:avoid!important;
+  }
+}
+</style>
+
+
+<style id="activity-pond-clarity-v1">
+.pond-app-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;border-radius:16px;background:linear-gradient(135deg,#eaf8ff,#f7fcff);border:1px solid #cfe8f5;margin-bottom:12px}
+.pond-app-title{display:flex;align-items:center;gap:11px;min-width:0}.pond-app-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:#dff4ff;font-size:22px;flex:0 0 auto}.pond-app-title b{display:block;font-size:16px;color:#083f6c}.pond-app-title small{display:block;margin-top:3px;color:#6c8191;line-height:1.35}.pond-week-badge{flex:0 0 auto;padding:8px 12px;border-radius:999px;background:#087fc0;color:#fff;font-weight:900;font-size:12px;white-space:nowrap}
+.pond-app-steps{display:grid;gap:9px;margin-top:8px}.pond-app-step{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border:1px solid #dfebf3;border-radius:13px;background:#fff}.pond-step-no{width:28px;height:28px;border-radius:9px;background:#e9f6ff;color:#0873b2;display:grid;place-items:center;font-weight:900;flex:0 0 auto}.pond-app-step b{display:block;color:#17435f}.pond-app-step small{display:block;color:#718493;margin-top:2px;line-height:1.4}
+@media(max-width:560px){.pond-app-head{align-items:flex-start}.pond-week-badge{padding:7px 10px}.pond-app-title b{font-size:15px}}
+</style>
+
+
+<style id="pond-application-detail-cards-v2">
+.pond-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
+.pond-detail-box{padding:11px 12px;border:1px solid #dceaf3;border-radius:13px;background:#fff;min-width:0}
+.pond-detail-box small{display:block;color:#708696;font-size:11px;font-weight:700;margin-bottom:4px}
+.pond-detail-box strong{display:block;color:#0b4774;font-size:15px;line-height:1.25;word-break:break-word}
+.pond-detail-box.time{background:#f1f8ff}.pond-detail-box.carbon{background:#fff9ed}.pond-detail-box.culture{background:#f2fbf5}
+@media(max-width:700px){.pond-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.pond-detail-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="air-culture-and-project-guide-final">
+.air-culture-schedule{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.air-time-card{padding:15px 12px;border-radius:15px;text-align:center;border:1px solid #dbeaf2}
+.air-time-card.morning{background:linear-gradient(145deg,#effcf3,#e7f9ee)}
+.air-time-card.evening{background:linear-gradient(145deg,#eff7ff,#e6f2ff)}
+.air-time-card small{display:block;color:#7a8d9c;font-size:11px;letter-spacing:.4px}
+.air-time-card b{display:block;color:#07588d;font-size:16px;margin-top:3px}
+.air-time-card .air-dose{font-size:20px;font-weight:900;color:#0876b8;margin-top:9px}
+.air-time-card span{display:block;color:#60798a;font-size:11px;font-weight:700;margin-top:2px}
+.guide-hero{padding:22px;border-radius:20px;background:linear-gradient(135deg,#075d94,#0a91cf);color:#fff;margin-bottom:15px;box-shadow:0 12px 28px rgba(7,93,148,.18)}
+.guide-hero h3{font-size:24px;margin:0 0 7px}.guide-hero p{margin:0;line-height:1.55;color:#eaf8ff}
+.guide-flow{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.guide-flow span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.16);font-size:11px;font-weight:800}
+.guide-step{position:relative;padding:17px 17px 17px 62px!important;min-height:135px;background:linear-gradient(145deg,#fff,#f8fcff)!important}
+.guide-no{position:absolute;left:16px;top:17px;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#e5f5ff;color:#0874b5;font-weight:900;font-size:15px}
+.guide-step h4{margin:0 0 7px;color:#0a4775;font-size:15px}.guide-step p{margin:0;color:#526d80;font-size:12px;line-height:1.55}
+.guide-tip{margin-top:9px;padding:8px 10px;border-radius:10px;background:#eef9f2;color:#397052;font-size:11px}
+.guide-check{padding:17px;border-radius:16px;background:#fff9e9;border:1px solid #f4e2a9;margin-top:15px}.guide-check b{color:#805c00}
+@media(max-width:560px){.air-culture-schedule{grid-template-columns:1fr 1fr}.guide-step{min-height:0}.guide-hero{padding:18px}.guide-hero h3{font-size:20px}}
+</style>
+
+
+<style>
+.btn-reset-red{
+  background:#dc2626 !important;
+  color:#fff !important;
+  border-color:#dc2626 !important;
+}
+.btn-reset-red:hover{
+  background:#b91c1c !important;
+  border-color:#b91c1c !important;
+}
+</style>
+<style id="auth-settings-v1">
+#authGate{position:fixed;inset:0;z-index:100000;background:linear-gradient(135deg,#063b63,#0b8db2);display:grid;place-items:center;padding:18px}
+#authGate.hidden{display:none}.auth-card{width:min(440px,100%);background:#fff;border-radius:22px;padding:24px;box-shadow:0 24px 70px #002b4666}.auth-logo{max-width:210px;max-height:95px;display:block;margin:0 auto 12px;object-fit:contain}.auth-card h2{text-align:center;color:#073e70;margin:6px 0}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}.auth-tabs button{padding:11px;border:0;border-radius:10px;font-weight:900;cursor:pointer}.auth-tabs button.active{background:#078de5;color:#fff}.auth-form{display:grid;gap:11px}.auth-form input{width:100%;padding:12px;border:1px solid #cddfea;border-radius:10px}.auth-error{min-height:18px;color:#c62828;font-size:12px;font-weight:700}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.settings-preview{height:150px;border-radius:14px;border:1px solid #d7e7f1;background:#eef7fb center/cover no-repeat;display:grid;place-items:center;overflow:hidden}.settings-preview img{max-width:90%;max-height:125px;object-fit:contain}.account-box{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.setting-upload input[type=file]{width:100%;padding:9px;border:1px solid #cddfea;border-radius:9px;background:white}@media(max-width:650px){.settings-grid{grid-template-columns:1fr}}
+</style>
+<style id="auth-farm-name-aesthetic">
+#authFarmName{
+  font-size:clamp(30px,5vw,46px)!important;
+  line-height:1.05!important;
+  font-weight:900!important;
+  letter-spacing:-1.2px!important;
+  margin:10px 0 8px!important;
+  background:linear-gradient(90deg,#0759c7,#0798d5,#19a653);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent!important;
+  text-shadow:0 8px 24px rgba(7,105,180,.10);
+}
+.auth-logo{max-width:300px!important;max-height:145px!important;margin-bottom:8px!important}
+@media(max-width:560px){
+  #authFarmName{font-size:34px!important}
+  .auth-logo{max-width:255px!important;max-height:125px!important}
+}
+</style>
+<style id="summary-user-background-final">
+#summary .report-cover{background:linear-gradient(90deg,rgba(3,45,83,.84),rgba(0,126,177,.28)),var(--farm-summary-bg,url("assets/asset-003.png")) center/cover no-repeat!important}
+#summary .report-photo{background:var(--farm-summary-bg,url("assets/asset-003.png")) center/cover no-repeat!important}
+@media print{#summary .report-cover{background:linear-gradient(90deg,rgba(3,45,83,.84),rgba(0,126,177,.28)),var(--farm-summary-bg,url("assets/asset-003.png")) center/cover no-repeat!important}#summary .report-photo{display:block!important;background:var(--farm-summary-bg,url("assets/asset-003.png")) center/cover no-repeat!important}}
+</style>
+
+<style id="sidebar-farm-name-aesthetic">
+.side>h3{
+  font-size:22px!important;
+  line-height:1.1!important;
+  font-weight:900!important;
+  letter-spacing:-.35px!important;
+  margin:10px 6px 22px!important;
+  text-align:center!important;
+  background:linear-gradient(90deg,#063b78,#078fd1,#159b57);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent!important;
+  text-shadow:0 5px 18px rgba(7,105,160,.10);
+}
+@media(max-width:900px){
+  body.mobile-home .side>h3{
+    font-size:27px!important;
+    margin:10px 0 25px!important;
+  }
+}
+</style>
+
+
+<style id="auth-fixed-background-final">
+#authGate{
+  background:
+    linear-gradient(135deg,rgba(3,45,77,.34),rgba(3,92,123,.18)),
+    url("assets/embedded-01.png") center center/cover no-repeat fixed!important;
+}
+#authGate::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,28,48,.08),rgba(0,40,67,.24));
+}
+#authGate .auth-card{position:relative;z-index:1}
+@media(max-width:650px){
+  #authGate{background-position:center center!important}
+}
+</style>
+
+
+<style id="password-show-hide-style">
+.password-wrap{position:relative;width:100%}
+.password-wrap #authPassword{width:100%;padding-right:92px!important}
+.password-toggle{
+ position:absolute;right:8px;top:50%;transform:translateY(-50%);
+ border:0;background:transparent;color:#0874b5;font-weight:800;
+ cursor:pointer;padding:7px 8px;border-radius:8px;display:flex;gap:5px;align-items:center;
+}
+.password-toggle:hover{background:#eaf6fd}
+.password-toggle span{font-size:12px}
+</style>
+
+
+<style id="fixed-loading-logo-final">
+#launchScreen .launch-box{
+  width:min(78vw,560px)!important;
+  margin-bottom:max(48px,env(safe-area-inset-bottom))!important;
+}
+#launchScreen .launch-logo{
+  width:100%!important;
+  max-height:260px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.28))!important;
+}
+@media(max-width:560px){
+  #launchScreen .launch-box{width:min(86vw,390px)!important}
+  #launchScreen .launch-logo{max-height:190px!important}
+}
+</style>
+
+
+<style id="loading-same-as-auth-final">
+#launchScreen{
+  background:linear-gradient(135deg,rgba(3,45,77,.34),rgba(3,92,123,.18)),
+    url("assets/embedded-01.png") center center/cover no-repeat fixed!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+#launchScreen::before{
+  background:linear-gradient(180deg,rgba(0,28,48,.08),rgba(0,40,67,.24))!important;
+}
+#launchScreen .launch-box{
+  width:min(78vw,560px)!important;
+  margin:0!important;
+  text-align:center!important;
+}
+#launchScreen .launch-logo{
+  width:100%!important;
+  max-height:280px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.28))!important;
+}
+#launchScreen .launch-loader{display:none!important}
+@media(max-width:560px){
+  #launchScreen .launch-box{width:min(86vw,390px)!important}
+  #launchScreen .launch-logo{max-height:200px!important}
+}
+</style>
+
+
+<style id="daily-activity-fixed-background-final">
+#activity::before{
+  background:url("assets/embedded-02.png") center center/cover no-repeat fixed!important;
+}
+#activity::after{
+  background:linear-gradient(180deg,rgba(4,35,59,.18),rgba(4,55,82,.34))!important;
+}
+@media(max-width:900px){
+  #activity::before{background-attachment:scroll!important;background-position:center top!important;}
+}
+</style>
+
+
+<style id="daily-activity-background-new-final">
+#activity::before{
+  background:url("assets/embedded-03.png") center center/cover no-repeat fixed!important;
+}
+@media(max-width:900px){
+  #activity::before{
+    background-attachment:scroll!important;
+    background-position:center center!important;
+  }
+}
+</style>
+
+
+<style id="daily-activity-pool-mode-style">
+.pool-mode-select{
+  min-width:150px;padding:10px 36px 10px 12px;border:1px solid #cbd5e1;border-radius:12px;
+  background:#fff;color:#123b5d;font-weight:800;box-shadow:0 5px 16px rgba(15,80,120,.08)
+}
+@media(max-width:720px){
+  #activity .bar{align-items:stretch}
+  .pool-mode-select{width:100%;min-width:0}
+}
+</style>
+
+<style id="module-pool-mode-final">
+.module-pool-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.module-pool-head h2{margin:0}
+.module-pool-select{min-width:160px;padding:10px 36px 10px 12px;border:1px solid #cbdce7;border-radius:12px;background:#fff;color:#123b5d;font-weight:900;box-shadow:0 5px 16px rgba(15,80,120,.08)}
+@media(max-width:600px){.module-pool-head{align-items:stretch;flex-direction:column}.module-pool-select{width:100%;min-width:0}}
+@media print{#summary .summary-pool-head{display:none!important}}
+</style>
+<style id="pool-reset-final">
+.btn-reset-red,[data-reset-pool]{background:#dc2626!important;color:#fff!important;border-color:#dc2626!important}
+.btn-reset-red:hover,[data-reset-pool]:hover{background:#b91c1c!important}
+</style>
+<style id="actual-save-inside-card">
+.actual-save-row{grid-column:1/-1;display:flex;justify-content:flex-end;margin-top:6px}
+.actual-save-btn{min-width:165px;font-weight:900}
+@media(max-width:600px){.actual-save-row{justify-content:stretch}.actual-save-btn{width:100%}}
+</style>
+<style id="guide-simple-style">
+.guide-simple{max-width:820px;display:grid;gap:10px}
+.guide-step{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.94);border:1px solid #dbe8ef;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(20,70,100,.06)}
+.guide-step>span{flex:0 0 32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#168be0;color:#fff;font-weight:900}
+.guide-step b{display:block;color:#123b5d;font-size:15px;margin:1px 0 3px}
+.guide-step small{display:block;color:#526b7b;font-size:12.5px;line-height:1.45}
+.guide-flow{margin-top:4px;background:linear-gradient(135deg,#0c77c9,#18a0d8);color:#fff;border-radius:14px;padding:14px;text-align:center}
+.guide-flow b{display:block;margin-bottom:6px;font-size:15px}.guide-flow div{font-size:12px;font-weight:700;line-height:1.7}.guide-flow i{font-style:normal;opacity:.7;margin:0 4px}
+@media(max-width:600px){.guide-step{padding:11px}.guide-step>span{flex-basis:29px;height:29px}.guide-step small{font-size:12px}}
+</style>
+
+<style id="mobile-size-match-reference-final">
+/* Ukuran/layout HP disamakan dengan mentahan last(1).html */
+@media(max-width:900px){
+  .app{grid-template-columns:1fr}
+  .side{position:static;min-height:auto;padding-bottom:190px}
+  .side::before{height:210px}
+  .form,.g4,.g3,.g2{grid-template-columns:1fr 1fr}
+  .nav{display:flex;overflow:auto}
+  .nav button{min-width:150px}
+  .top{position:static;margin:0;border-radius:0}
+  #dashboard:before{height:360px}
+  #dashboard #dashKpi{grid-template-columns:repeat(2,1fr)}
+  #dashboard .project-hero b{font-size:34px}
+  body.mobile-home .app{display:block;min-height:100vh}
+  body.mobile-home .side{display:block;min-height:100vh;padding:24px 16px 220px;border-right:0}
+  body.mobile-home .side::before{height:230px}
+  body.mobile-home .brand{max-width:280px;margin:0 auto}
+  body.mobile-home .side>h3{text-align:center;font-size:20px;margin:6px 0 24px}
+  body.mobile-home .nav{display:grid!important;grid-template-columns:1fr;gap:10px;overflow:visible}
+  body.mobile-home .nav button{min-width:0!important;margin:0!important;padding:17px 18px!important;background:rgba(255,255,255,.72)!important;border:1px solid rgba(12,80,125,.10)!important;border-radius:15px!important;color:#173c5b!important;box-shadow:0 5px 16px rgba(20,70,105,.08)!important;font-size:15px!important;transform:none!important}
+  body.mobile-home .nav button.active{background:rgba(255,255,255,.72)!important;color:#173c5b!important}
+  body.mobile-home .main{display:none!important}
+  body.mobile-module .side{display:none!important}
+  body.mobile-module .app{display:block!important;min-height:100vh}
+  body.mobile-module .main{display:block!important;width:100%!important}
+  body.mobile-module .top{display:flex!important;position:sticky!important;top:0!important;z-index:20!important;padding:10px 12px!important}
+  body.mobile-module .top>div:first-child{min-width:0;flex:1}
+  body.mobile-module .top>.bar{max-width:62%;justify-content:flex-end;flex-wrap:nowrap}
+  body.mobile-module #projectSelect{max-width:120px;min-width:0}
+  body.mobile-module #addProjectBtn{display:inline-flex!important;align-items:center;justify-content:center;white-space:nowrap;flex:0 0 auto}
+  body.mobile-module .content{padding:12px!important;width:100%!important;max-width:none!important}
+  body.mobile-module .page.active{width:100%;overflow:visible}
+  body.mobile-module .table{max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:560px){
+  .form,.g4,.g3,.g2{grid-template-columns:1fr}
+  .content{padding:12px}
+  #dashboard #dashKpi{grid-template-columns:1fr}
+  #dashboard .project-hero{min-height:190px;padding:22px}
+  .setup-final-action{display:block}
+  .setup-save-btn{width:100%;min-width:0}
+}
+</style>
+
+<style id="auth-background-mobile-final">
+#authGate{background:linear-gradient(135deg,rgba(3,45,77,.34),rgba(3,92,123,.18)),url("assets/embedded-01.png") center center/cover no-repeat fixed!important;min-height:100dvh;}
+#authGate::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,28,48,.08),rgba(0,40,67,.24));}
+#authGate .auth-card{position:relative;z-index:1;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);}
+@media(max-width:650px){#authGate{background-position:center center!important;background-attachment:scroll!important;padding:14px!important}.auth-card{width:min(94vw,440px)!important;padding:20px 18px!important;border-radius:20px!important}.auth-logo{max-width:235px!important;max-height:115px!important}#authFarmName{font-size:32px!important}}
+</style>
+
+<style id="tiara-fixed-auth-assets-lite">
+#authGate,#launchScreen{background:linear-gradient(135deg,rgba(3,45,77,.30),rgba(3,92,123,.16)),url("tiara-background.jpg") center center/cover no-repeat fixed!important;}
+#authGate::before,#launchScreen::before{background:linear-gradient(180deg,rgba(0,28,48,.06),rgba(0,40,67,.20))!important;}
+#authLogo,#launchScreen .launch-logo{content:url("tiara-logo.png")!important;object-fit:contain!important;}
+@media(max-width:650px){#authGate,#launchScreen{background-attachment:scroll!important;background-position:center center!important}.auth-card{width:min(92vw,440px)!important;padding:20px!important}.auth-logo{max-width:min(72vw,300px)!important}}
+</style>
+
+<style id="daily-activity-external-bg-github-final">
+/* Daily Activity background disimpan sebagai file terpisah di GitHub: assets/daily-activity-bg.webp */
+#activity::before{
+  background:url("assets/daily-activity-bg.webp") center center/cover no-repeat fixed!important;
+}
+@media(max-width:900px){
+  #activity::before{background-attachment:scroll!important;background-position:center center!important;}
+}
+</style>
+</head><body><div id="authGate"><div class="auth-card"><img class="auth-logo" id="authLogo" src="assets/embedded-04.png" alt="Logo"><h2 id="authFarmName">Tiara Fishery</h2><div class="note" style="text-align:center">Masuk untuk membuka data farm Anda.</div><div class="auth-tabs"><button id="tabSignin" class="active" type="button" onclick="setAuthMode('signin')">Sign In</button><button id="tabSignup" type="button" onclick="setAuthMode('signup')">Sign Up</button></div><form class="auth-form" onsubmit="submitAuth(event)"><input id="authName" placeholder="Nama pengguna" style="display:none"><input id="authEmail" type="email" placeholder="Email" required autocomplete="email"><div class="password-wrap">
+<input id="authPassword" type="password" placeholder="Password (minimal 6 karakter)" required minlength="6" autocomplete="current-password">
+<button type="button" class="password-toggle" id="passwordToggle" onclick="toggleAuthPassword()" aria-label="Tampilkan password" title="Tampilkan password">👁 <span>Show</span></button>
+</div><div id="otpArea" style="display:none"><div style="display:grid;grid-template-columns:1fr auto;gap:8px"><input id="authOtp" inputmode="numeric" maxlength="6" placeholder="Kode OTP 6 digit"><button class="btn" id="sendOtpBtn" type="button" onclick="sendSignupOtp()">Kirim OTP</button></div><div class="note" id="otpInfo" style="margin-top:6px">Kode OTP akan dikirim ke email sebelum akun dibuat.</div></div><button class="btn g" id="authSubmit" type="submit">Masuk</button><div class="auth-error" id="authError"></div></form><div class="note" style="margin-top:8px;text-align:center">Data aplikasi dipisahkan berdasarkan akun email.</div></div></div><div id="launchScreen" aria-label="Tiara Fishery sedang memuat"><div class="launch-box"><img class="launch-logo" src="assets/embedded-04.png" alt="Tiara Fishery"><div class="launch-loader"></div></div></div><div class="app" id="appRoot" style="display:none"><aside class="side"><div class="brand"><img src="assets/asset-005.png"></div><h3>Tiara Fishery</h3><div class="nav" id="nav"></div></aside><main class="main"><div class="top"><div><b id="title">Dashboard</b><div class="note" id="subtitle"></div></div><div class="bar"><select id="projectSelect"></select><button class="btn" id="addProjectBtn" type="button">+ Project</button></div></div><div class="content">
+<section id="guide" class="page">
+<h2>📖 Panduan Penggunaan</h2>
+<div class="guide-simple">
+
+<div class="guide-step"><span>1</span><div><b>⚙️ Setelan</b><small>Atur Nama Farm, Logo PNG, Background, Foto Summary, dan Foto Halaman.</small></div></div>
+
+<div class="guide-step"><span>2</span><div><b>📁 Project</b><small>Buat project budidaya, isi jenis ikan, sistem, jumlah kolam, tebar, target panen dan biaya. Tekan <strong>Simpan & Hitung Project</strong>.</small></div></div>
+
+<div class="guide-step"><span>3</span><div><b>🏠 Dashboard</b><small>Lihat ringkasan progres budidaya. Jika kolam lebih dari satu, pilih <strong>Semua Kolam</strong> atau kolam tertentu.</small></div></div>
+
+<div class="guide-step"><span>4</span><div><b>📝 Daily Activity</b><small>Pilih tanggal dan kolam. Lihat <strong>Tugas Hari Ini</strong>, lalu isi Aktual Hari Ini dan tekan <strong>💾 Simpan Aktual</strong>.</small></div></div>
+
+<div class="guide-step"><span>5</span><div><b>📊 Daily Management</b><small>Pantau target dan realisasi harian. Data dapat diedit dan di-reset sesuai kolam yang sedang dipilih.</small></div></div>
+
+<div class="guide-step"><span>6</span><div><b>🧪 C/N Ratio</b><small>Khusus Bioflok untuk melihat kebutuhan karbon, kultur, dan ketinggian air dalam <strong>cm</strong>.</small></div></div>
+
+<div class="guide-step"><span>7</span><div><b>💰 Finance & Margin</b><small>Lihat biaya, pendapatan, HPP, BEP, laba, margin, R/C Ratio dan ROI. Bisa dilihat Semua Kolam atau per kolam.</small></div></div>
+
+<div class="guide-step"><span>8</span><div><b>📑 Summary</b><small>Periksa ringkasan akhir budidaya dan keuangan. Pilih Semua Kolam atau per kolam sebelum membuat laporan.</small></div></div>
+
+<div class="guide-step"><span>9</span><div><b>🖨️ Cetak / Simpan PDF</b><small>Dari Summary, simpan laporan akhir budidaya setelah seluruh data sudah benar.</small></div></div>
+
+<div class="guide-flow"><b>Alur Cepat</b><div>Setelan <i>→</i> Project <i>→</i> Dashboard <i>→</i> Daily Activity <i>→</i> Daily Management <i>→</i> Finance <i>→</i> Summary</div></div>
+
+</div>
+</section>
+<section id="setup" class="page"><div id="projectEmpty" class="card" style="display:none;margin-bottom:14px"><h3>Belum ada project</h3><p class="note">Klik <b>+ Project</b> di bagian atas untuk membuat project baru.</p></div><div class="bar"><h2>🧰 Project</h2><button class="btn r" onclick="deleteProject()">Hapus</button></div><p class="note">Isi data dasar project secara manual terlebih dahulu. Setelah Jenis Ikan dan Pakan per Fase terisi, gunakan tombol <b>Terapkan SOP</b> untuk mengisi parameter teknis sesuai SOP.</p>
+<details class="card setup-collapse"><summary>1. Project</summary><div class="setup-collapse-body"><div class="form" id="setupFields"></div><input type="hidden" id="duration"><input type="hidden" id="density"><input type="hidden" id="targetFcr"><div id="capacity" style="display:none"></div></div></details>
+<details class="card setup-collapse" style="margin-top:14px"><summary>2. Pakan per Fase & Parameter Pakan</summary><div class="setup-collapse-body"><div class="subcard"><div class="subhead">🌾 Pakan per Fase & Parameter Pakan</div><div class="hint" style="margin-bottom:10px">Pilih nama pakan dari daftar. Harga, protein, kadar air dan kemasan akan terisi otomatis dari tabel pakan yang dilampirkan. Harga tetap dapat diedit sesuai harga pembelian aktual. Protein pakan digunakan saat menerapkan SOP.</div><div class="table" style="max-height:none"><table class="setup-table"><thead><tr><th>Fase</th><th>Nama Pakan</th><th>Jumlah</th><th>Satuan</th><th>Harga</th><th>Protein %</th><th>Kadar Air %</th><th>Harga / Satuan</th></tr></thead><tbody id="feedPhaseRows"></tbody></table></div></div></div></details>
+<details class="card setup-collapse" style="margin-top:14px"><summary>3. Bibit Ikan</summary><div class="setup-collapse-body"><div class="subcard"><div class="subhead">🐟 Bibit Ikan</div><div class="form" id="seedFields" style="grid-template-columns:repeat(4,1fr)"></div><div id="sopTechnicalFields" class="form" style="grid-template-columns:repeat(4,1fr);margin-top:12px"></div><div class="hint" id="sopProjectHint">Jumlah Tebar Aktual dapat diisi manual. Jika dikosongkan, aplikasi memakai kapasitas hasil ukuran kolam × padat tebar SOP.</div><div id="sopProjectCard" class="subcard" style="margin-top:10px"></div></div></div></details>
+<details class="card setup-collapse" style="margin-top:14px"><summary>4. Bahan C/N</summary><div class="setup-collapse-body"><div class="table"><table><thead><tr><th>Bahan</th><th>Harga</th><th>Per / Isi</th><th>Satuan</th><th>Harga Satuan</th></tr></thead><tbody id="cnInputs"></tbody></table></div><div style="margin-top:12px"><button type="button" class="btn" onclick="addCnMaterial()">+ Tambah Bahan C/N</button></div><div class="hint">Saat <b>Terapkan SOP</b>, aplikasi tetap mengisi bahan C/N awal sesuai rekomendasi SOP: <b>Aqua Enzym</b>, <b>Nitrobacter</b>, dan satu <b>Sumber Karbon (Gula Pasir atau Molase)</b>. Setelah <b>Terapkan SOP</b>, nama dan dosis awal Aqua Enzym serta Nitrobacter otomatis mengikuti rekomendasi SOP, tetapi <b>nama bahan dan dosis g/L dapat diedit manual</b>. Perubahan dosis otomatis memengaruhi kebutuhan gram pada Aplikasi C/N serta biaya Aqua Enzym/Nitrobacter di Finance & Margin. Harga, isi/kemasan dan satuan juga tetap dapat diedit.</div></div></details>
+<details class="card setup-collapse" style="margin-top:14px"><summary>5. Biaya Operasional Lain</summary><div class="setup-collapse-body"><div class="subcard"><div class="subhead">⚡ Listrik / Peralatan</div><div class="form" id="electricFields"></div><div class="grid g3" id="electricPreview" style="margin-top:12px"></div><div class="hint">Saat <b>Terapkan SOP</b>, rekomendasi daya dan jam operasi diisi otomatis dari sistem serta kapasitas kolam. Semua nilai tetap dapat diedit manual. Biaya listrik mengikuti daya × jam nyala/hari × lama budidaya × tarif/kWh.</div></div><div class="subcard" style="margin-top:14px"><div class="subhead">🧾 Biaya Operasional Lain</div><div class="table" style="max-height:none"><table class="setup-table"><thead><tr><th>Komponen</th><th>Jumlah</th><th>Satuan</th><th>Harga / Satuan</th><th>Total</th></tr></thead><tbody id="otherCostRows"></tbody></table></div><div class="hint">Satuan bebas diisi sendiri, misalnya orang/siklus, paket, trip, bulan, unit, atau lainnya.</div></div></div></details>
+<details class="card setup-collapse" style="margin-top:14px"><summary>6. Harga Jual</summary><div class="setup-collapse-body"><div class="subcard"><div class="subhead">💰 Harga Jual</div><div class="form" id="saleFields" style="grid-template-columns:repeat(2,1fr)"></div></div></div></details>
+<div class="setup-final-action"><button class="btn g setup-save-btn" onclick="saveSetup()">Simpan & Hitung Project</button></div></section>
+<section id="dashboard" class="page"><div class="module-pool-head"><h2>🏠 Dashboard</h2><select id="dashboardPoolMode" class="module-pool-select" onchange="renderDashboard()"></select></div><div id="dashEmpty" class="card">Isi dan simpan Project terlebih dahulu.</div><div id="dashBody" style="display:none"><div class="project-hero" id="projectHero"></div><div class="grid g4" id="dashKpi"></div><div class="dashboard-summary-wrap" style="margin-top:18px"><div class="card dashboard-summary-card"><div id="dashSummary"></div></div></div></div></section>
+<section id="daily" class="page"><div class="bar"><button class="btn btn-reset-red" type="button" onclick="resetAllActual()">↺ Reset Semua Baris</button></div><div class="module-pool-head"><h2>📊 Daily Management</h2><select id="dailyPoolMode" class="module-pool-select" onchange="renderDaily()"></select></div><div class="table"><table><thead><tr><th>Day</th><th>Week</th><th>Date</th><th>Pelet</th><th>Kematian</th><th>Populasi</th><th>Berat/ekor g</th><th>Total Berat kg</th><th>FR</th><th>Rekom. Pakan g</th><th>Penyerapan g</th><th>Unsur C g</th><th>Target C:N</th><th>C:N Pakan</th><th>Edit</th></tr></thead><tbody id="dailyRows"></tbody></table></div></section>
+<section id="activity" class="page"><div class="bar"><h2>🗓️ Daily Activity</h2><input type="date" id="actDate">
+<select id="actPoolMode" class="pool-mode-select" onchange="renderActivity()" style="display:none" aria-label="Pilih kolam"></select>
+<button class="btn" type="button" onclick="actDate.value=today();renderActivity()">Hari Ini</button></div><div class="grid g4" id="actKpi"></div><div class="activity-layout" style="margin-top:18px"><div class="card actual-card"><h3>📝 Aktual Hari Ini</h3><div class="form" style="grid-template-columns:1fr 1fr" id="actInputs"></div></div><div class="card recommendation-card"><div id="actRec"></div></div></div></section>
+<section id="cn" class="page"><h2>🧪 Aplikasi C/N</h2><div class="table"><table><thead><tr><th>Apk</th><th>Week</th><th>Tanggal</th><th>Ketinggian Air cm</th><th>Total Air m³</th><th>Total Pakan g</th><th>Air Kultur L</th><th>Gula Kultur g</th><th>Gula C/N g</th><th>Aqua Enzym g</th><th>Nitrobacter g</th></tr></thead><tbody id="cnRows"></tbody></table></div></section>
+<section id="finance" class="page"><div class="module-pool-head"><h2>💰 Finance & Margin</h2><select id="financePoolMode" class="module-pool-select" onchange="renderFinance()"></select></div><div class="grid g4" id="finKpi"></div><div class="table" style="margin-top:14px"><table class="finance"><thead><tr><th>Akun</th><th>Qty</th><th>Basis Harga</th><th>Total</th><th>Keterangan</th></tr></thead><tbody id="finRows"></tbody></table></div></section>
+<section id="settings" class="page"><h2>⚙️ Setelan</h2><div class="card"><div class="account-box"><div><b>Akun Pengguna</b><div class="note" id="settingsAccount"></div></div><button class="btn r" type="button" onclick="logoutUser()">Keluar / Logout</button></div></div><div class="card" style="margin-top:14px"><h3>Identitas & Tampilan Farm</h3><div class="field"><label>Nama Farm</label><input id="farmNameSetting" placeholder="Tiara Fishery"></div><div class="settings-grid" style="margin-top:16px"><div class="setting-upload"><b>Foto Logo</b><div class="note">Khusus file PNG agar logo transparan tetap rapi.</div><input type="file" accept="image/png,.png" onchange="previewSettingImage(event,'logo')"><div class="settings-preview" id="logoPreview" style="margin-top:8px"></div></div><div class="setting-upload"><b>Foto Background</b><div class="note">Background utama aplikasi.</div><input type="file" accept="image/*" onchange="previewSettingImage(event,'background')"><div class="settings-preview" id="backgroundPreview" style="margin-top:8px"></div></div><div class="setting-upload"><b>Foto Summary</b><div class="note">Foto khusus untuk background Laporan Akhir Budidaya dan foto pada halaman Summary.</div><input type="file" accept="image/*" onchange="previewSettingImage(event,'summary')"><div class="settings-preview" id="summaryPreview" style="margin-top:8px"></div></div><div class="setting-upload"><b>Foto Halaman</b><div class="note">Foto dekorasi yang menempel di bagian kiri bawah/sidebar aplikasi.</div><input type="file" accept="image/*" onchange="previewSettingImage(event,'pagePhoto')"><div class="settings-preview" id="pagePhotoPreview" style="margin-top:8px"></div></div></div><div class="bar" style="margin-top:18px"><button class="btn g" type="button" onclick="saveFarmSettings()">Simpan Setelan</button><button class="btn btn-reset-red" type="button" onclick="resetFarmSettings()">Reset Default</button></div></div></section>
+<section id="summary" class="page"><div class="module-pool-head summary-pool-head"><h2>📑 Summary</h2><select id="summaryPoolMode" class="module-pool-select" onchange="renderSummary()"></select></div><div id="summaryBody"></div><div class="report-actions" style="margin-top:16px;margin-bottom:0"><button class="btn" type="button" onclick="printSummary()">⬇️ Cetak / Simpan PDF</button></div></section>
+</div></main></div>
+<script>
+const $=x=>document.getElementById(x),N=x=>Number(x)||0,F=x=>new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(N(x)),Rp=x=>'Rp '+new Intl.NumberFormat('id-ID').format(Math.round(N(x))),today=()=>{let d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)},add=(s,n)=>{let d=new Date(s+'T00:00:00');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)},diff=(a,b)=>Math.floor((new Date(a)-new Date(b))/86400000),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const navs=[['setup','Project'],['dashboard','Dashboard'],['activity','Daily Activity'],['daily','Daily Management'],['cn','C/N Ratio'],['finance','Finance & Margin'],['summary','Summary'],['guide','Panduan Penggunaan'],['settings','⚙️ Setelan']];
+let currentUser=null,authMode='signin';
+const accounts=()=>JSON.parse(localStorage.getItem('tiaraAccounts')||'{}');
+const userKey=email=>'tiaraD2logic::'+String(email||'').trim().toLowerCase();
+const settingsKey=email=>'tiaraFarmSettings::'+String(email||'').trim().toLowerCase();
+let db={active:'',projects:{}};
+function loadUserDb(){db=JSON.parse(localStorage.getItem(userKey(currentUser?.email))||'null')||{active:'',projects:{}}}
+const P=()=>db.projects[db.active]||{name:'',setup:{},actual:{}},S=()=>P().setup||{};
+const save=()=>{if(currentUser?.email)localStorage.setItem(userKey(currentUser.email),JSON.stringify(db));};
+function hashText(v){let h=2166136261;for(let i=0;i<v.length;i++){h^=v.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)}
+function setAuthMode(m){authMode=m;tabSignin.classList.toggle('active',m==='signin');tabSignup.classList.toggle('active',m==='signup');authName.style.display=m==='signup'?'block':'none';otpArea.style.display='none';authSubmit.textContent=m==='signup'?'Buat Akun':'Masuk';authError.textContent='';authPassword.autocomplete=m==='signup'?'new-password':'current-password'}
+const TIARA_OTP_API=''; // Isi URL backend OTP HTTPS. Endpoint POST /send dan /verify.
+let otpRequestId='';
+async function sendSignupOtp(){let email=authEmail.value.trim().toLowerCase(),name=authName.value.trim(),pass=authPassword.value;if(!email||!email.includes('@')){authError.textContent='Masukkan email yang valid.';return}if(pass.length<6){authError.textContent='Password minimal 6 karakter.';return}if(accounts()[email]){authError.textContent='Email sudah terdaftar. Silakan Sign In.';return}if(!TIARA_OTP_API){authError.textContent='Pengiriman OTP email belum terhubung ke server. Hubungkan layanan OTP/backend terlebih dahulu.';return}authError.textContent='';sendOtpBtn.disabled=true;sendOtpBtn.textContent='Mengirim...';try{let r=await fetch(TIARA_OTP_API.replace(/\/$/,'')+'/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,name})});let j=await r.json();if(!r.ok||!j.requestId)throw new Error(j.message||'OTP gagal dikirim');otpRequestId=j.requestId;otpInfo.textContent='OTP telah dikirim ke '+email+'. Cek Inbox/Spam.';authOtp.focus()}catch(err){authError.textContent=err.message||'OTP gagal dikirim.'}finally{sendOtpBtn.disabled=false;sendOtpBtn.textContent='Kirim Ulang OTP'}}
+async function submitAuth(e){e.preventDefault();let email=authEmail.value.trim().toLowerCase(),pass=authPassword.value,name=authName.value.trim(),a=accounts();authError.textContent='';if(pass.length<6){authError.textContent='Password minimal 6 karakter.';return}if(authMode==='signup'){if(a[email]){authError.textContent='Email sudah terdaftar. Silakan Sign In.';return}a[email]={name:name||email.split('@')[0],password:hashText(pass),createdAt:new Date().toISOString(),emailVerified:false};localStorage.setItem('tiaraAccounts',JSON.stringify(a));let legacy=localStorage.getItem('tiaraD2logic');if(legacy&&!localStorage.getItem(userKey(email)))localStorage.setItem(userKey(email),legacy)}else{if(!a[email]||a[email].password!==hashText(pass)){authError.textContent='Email atau password tidak sesuai.';return}}
+currentUser={email,name:a[email].name};localStorage.setItem('tiaraSession',JSON.stringify(currentUser));startUserApp();}
+function startUserApp(){loadUserDb();authGate.classList.add('hidden');appRoot.style.display='grid';applyFarmSettings();init();}
+function logoutUser(){localStorage.removeItem('tiaraSession');location.reload()}
+function getFarmSettings(){let st=JSON.parse(localStorage.getItem(settingsKey(currentUser?.email))||'null')||{farmName:'Tiara Fishery',logo:'',background:'',summary:'',pagePhoto:''};return st}
+function applyFarmSettings(){let st=getFarmSettings(),name=st.farmName||'Tiara Fishery';document.title=name;document.querySelector('.side>h3').textContent=name;document.querySelector('.brand img').src=st.logo||'assets/asset-005.png';let bg=st.background||'assets/asset-003.png';document.documentElement.style.setProperty('--farm-module-bg',`url("${bg}")`);document.documentElement.style.setProperty('--pond-bg',`url("${bg}")`);let pagePhoto=st.pagePhoto||'assets/asset-001.png';document.documentElement.style.setProperty('--farm-page-photo',`url("${pagePhoto}")`);let summaryPhoto=st.summary||st.dashboard||st.background||'assets/asset-003.png';document.documentElement.style.setProperty('--farm-summary-bg',`url("${summaryPhoto}")`);document.documentElement.style.setProperty('--farm-dashboard-bg',`url("${bg}")`);let style=document.getElementById('customFarmStyle');if(!style){style=document.createElement('style');style.id='customFarmStyle';document.head.appendChild(style)}style.textContent=`
+body,.main,.content{background-image:linear-gradient(rgba(239,249,255,.88),rgba(247,252,255,.92)),var(--farm-module-bg)!important;background-position:center!important;background-size:cover!important;background-attachment:fixed!important}
+.page{position:relative;isolation:isolate}.page::before{content:"";position:absolute;inset:-18px -20px;z-index:-2;background:linear-gradient(rgba(239,249,255,.78),rgba(247,252,255,.86)),var(--farm-module-bg) center/cover fixed no-repeat;border-radius:20px}.page::after{content:"";position:absolute;inset:-18px -20px;z-index:-1;background:rgba(255,255,255,.08);pointer-events:none;border-radius:20px}
+.side::before{background:linear-gradient(180deg,rgba(217,221,226,1) 0%,rgba(217,221,226,.30) 24%,rgba(217,221,226,.04) 52%),var(--farm-page-photo) left bottom/cover no-repeat!important}
+#dashboard:before{background:linear-gradient(180deg,rgba(3,42,74,.06),rgba(235,247,253,.05) 68%,rgba(238,248,253,.78) 100%),var(--farm-dashboard-bg) center top/cover no-repeat!important}
+#summary .report-cover{background:linear-gradient(90deg,rgba(3,45,83,.84),rgba(0,126,177,.28)),var(--farm-summary-bg) center/cover no-repeat!important}
+#summary .report-photo{background:var(--farm-summary-bg) center/cover no-repeat!important}
+@media print{body,.main,.content,.page{background:#fff!important}.page::before,.page::after{display:none!important}}
+`;}
+let pendingSettingImages={};
+function resizeImage(file,maxW=1400,quality=.82,format='image/jpeg'){return new Promise((res,rej)=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let sc=Math.min(1,maxW/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL(format,quality))};im.onerror=rej;im.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+async function previewSettingImage(e,type){let f=e.target.files?.[0];if(!f)return;if(type==='logo' && f.type!=='image/png'){alert('Foto Logo harus berformat PNG.');e.target.value='';return}let data=await resizeImage(f,type==='logo'?700:1400,type==='logo'?.92:.8,type==='logo'?'image/png':'image/jpeg');pendingSettingImages[type]=data;renderSettingsPreviews({...getFarmSettings(),...pendingSettingImages})}
+function renderSettingsPreviews(st){logoPreview.innerHTML=`<img src="${st.logo||'assets/asset-005.png'}">`;backgroundPreview.style.backgroundImage=`url("${st.background||'assets/asset-003.png'}")`;summaryPreview.style.backgroundImage=`url("${st.summary||st.dashboard||st.background||'assets/asset-003.png'}")`;pagePhotoPreview.style.backgroundImage=`url("${st.pagePhoto||'assets/asset-001.png'}")`}
+function renderSettings(){let st=getFarmSettings();farmNameSetting.value=st.farmName||'Tiara Fishery';settingsAccount.textContent=`${currentUser?.name||''} • ${currentUser?.email||''}`;pendingSettingImages={};renderSettingsPreviews(st)}
+function saveFarmSettings(){let old=getFarmSettings(),st={...old,...pendingSettingImages,farmName:farmNameSetting.value.trim()||'Tiara Fishery'};try{localStorage.setItem(settingsKey(currentUser.email),JSON.stringify(st));pendingSettingImages={};applyFarmSettings();renderSettings();alert('Setelan farm berhasil disimpan.')}catch(e){alert('Foto terlalu besar untuk penyimpanan perangkat. Coba gunakan foto yang lebih kecil.')}}
+function resetFarmSettings(){if(!confirm('Reset nama dan seluruh foto tampilan ke default Tiara Fishery?'))return;localStorage.removeItem(settingsKey(currentUser.email));pendingSettingImages={};applyFarmSettings();renderSettings()}
+
+function refreshAll(){refreshProjects();renderSetupFields();loadSetup();renderDashboard();renderDaily();renderActivity();renderCN();renderFinance();renderSummary();}
+function switchProject(projectId){if(!db.projects[projectId])return;db.active=projectId;save();const current=document.querySelector('.page.active')?.id||'dashboard';refreshAll();go(current);}
+function isMobile(){return window.matchMedia('(max-width:900px)').matches}
+function showMobileModules(){if(!isMobile())return;document.body.classList.add('mobile-home');document.body.classList.remove('mobile-module');document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));window.scrollTo(0,0)}
+function ensureMobileBack(){if(document.getElementById('mobileBackBtn'))return;const b=document.createElement('button');b.id='mobileBackBtn';b.type='button';b.className='mobile-back-btn';b.innerHTML='← Modul';b.onclick=showMobileModules;document.querySelector('.top>div:first-child').prepend(b)}
+function init(){nav.innerHTML=navs.map(x=>`<button data-p="${x[0]}" onclick="go('${x[0]}')">${x[1]}</button>`).join('');renderSetupFields();refreshProjects();actDate.value=today();actDate.addEventListener('change',()=>renderActivity());projectSelect.onchange=e=>switchProject(e.target.value);ensureMobileBack();if(isMobile())showMobileModules();else go(S().startDate&&N(S().seedCount)?'dashboard':'setup');window.addEventListener('resize',()=>{if(!isMobile()){document.body.classList.remove('mobile-home','mobile-module');if(!document.querySelector('.page.active'))go(S().startDate&&N(S().seedCount)?'dashboard':'setup')}else if(!document.body.classList.contains('mobile-module'))showMobileModules()})}
+function refreshProjects(){let entries=Object.entries(db.projects);projectSelect.innerHTML=entries.length?entries.map(([k,v])=>`<option value="${k}" ${k===db.active?'selected':''}>${v.name||'Project Baru'}</option>`).join(''):'<option value="">Belum ada project</option>';projectSelect.disabled=!entries.length;subtitle.textContent=entries.length?((P().name||'Project Baru')+(S().startDate?' • Mulai '+S().startDate:'')):'Belum ada project';const pe=document.getElementById('projectEmpty');const sp=document.getElementById('setup');if(pe)pe.style.display=entries.length?'none':'block';if(sp)sp.classList.toggle('no-project',!entries.length)}
+function newProject(){try{let k='p'+Date.now()+'_'+Math.random().toString(36).slice(2,6);db.projects[k]={name:'Project Baru',setup:{},actual:{}};db.active=k;save();refreshProjects();renderSetupFields();refreshAll();go('setup');setTimeout(()=>{let el=document.getElementById('projectName');if(el){el.value='';el.focus()}},0)}catch(err){console.error(err);alert('Project baru gagal dibuat. Silakan muat ulang aplikasi lalu coba lagi.')}}
+function deleteProject(){if(!db.active||!db.projects[db.active])return;delete db.projects[db.active];db.active=Object.keys(db.projects)[0]||'';save();refreshAll();go('setup')}
+function openSubPage(id,label){if(isMobile()){document.body.classList.remove('mobile-home');document.body.classList.add('mobile-module')}document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));if(window.title)title.textContent=label||'Panduan';window.scrollTo(0,0)}
+function go(id){if(isMobile()){document.body.classList.remove('mobile-home');document.body.classList.add('mobile-module')}document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.p===id));{let n=navs.find(x=>x[0]===id);if(n)title.textContent=n[1];}if(id==='dashboard')renderDashboard();if(id==='daily')renderDaily();if(id==='activity')renderActivity();if(id==='cn')renderCN();if(id==='finance')renderFinance();if(id==='summary')renderSummary();if(id==='settings')renderSettings();if(isMobile())window.scrollTo(0,0)}
+const fields=[['projectName','Nama Project','text'],['startDate','Tanggal Mulai / DOC 0','date'],['cultivationSystem','Sistem Budidaya','system'],['poolType','Jenis Kolam','select'],['poolCount','Jumlah Kolam','number'],['diameter','Diameter Bundar (m)','number'],['length','Panjang Persegi (m)','number'],['width','Lebar Persegi (m)','number'],['height','Tinggi Air (m)','number']];
+const feedDefs=[['fishType','Jenis Ikan','Nila'],['actualSeedCount','Jumlah Tebar Aktual (ekor)',''],['seedWeight','Bobot Awal (g/ekor)',10],['targetHarvestWeight','Target Bobot Panen (g/ekor)',330],['seedPrice','Harga Bibit / ekor',800],['feed1Name','Pakan Fase 1','Hi Pro V 781-1'],['feed1Qty','Jumlah Pakan Fase 1',30],['feed1Unit','Satuan Pakan Fase 1','kg'],['feed1Price','Harga Pakan Fase 1',420000],['feed2Name','Pakan Fase 2','Hi Pro V 781-2'],['feed2Qty','Jumlah Pakan Fase 2',30],['feed2Unit','Satuan Pakan Fase 2','kg'],['feed2Price','Harga Pakan Fase 2',380000],['feed3Name','Pakan Fase 3','Hi Pro V 781-3'],['feed3Qty','Jumlah Pakan Fase 3',30],['feed3Unit','Satuan Pakan Fase 3','kg'],['feed3Price','Harga Pakan Fase 3',380000],['feed1Protein','Protein Fase 1 (%)',28],['feed1Water','Kadar Air Fase 1 (%)',12],['feed2Protein','Protein Fase 2 (%)',28],['feed2Water','Kadar Air Fase 2 (%)',12],['feed3Protein','Protein Fase 3 (%)',28],['feed3Water','Kadar Air Fase 3 (%)',12]];
+
+const FEED_PRODUCTS=[
+{producer:'CP Prima',name:'Hi-Pro-Vite 781-1',protein:33,water:10,packKg:30,price:440000},
+{producer:'CP Prima',name:'Hi-Pro-Vite 781-2',protein:32,water:10,packKg:30,price:440000},
+{producer:'CP Prima',name:'Hi-Pro-Vite 781-3',protein:32,water:10,packKg:30,price:430000},
+{producer:'CP Prima',name:'Hi-Pro-Vite 781',protein:32,water:10,packKg:30,price:430000},
+{producer:'CP Prima',name:'Hi-Pro-Vite 789',protein:26,water:12,packKg:30,price:385000},
+{producer:'CP Prima',name:'Hi-Pro-Vite 783',protein:27,water:12,packKg:30,price:385000},
+{producer:'PT Matahari Sakti',name:'Prima Feed LP-2',protein:32,water:10,packKg:30,price:430000},
+{producer:'PT Matahari Sakti',name:'Prima Feed LP-3',protein:32,water:10,packKg:30,price:430000},
+{producer:'PT Matahari Sakti',name:'Prima Feed GP',protein:28,water:12,packKg:30,price:401130},
+{producer:'PT Matahari Sakti',name:'Prima Feed Preo 450',protein:25,water:12,packKg:30,price:380000},
+{producer:'PT Matahari Sakti',name:'Prima Feed SCAU',protein:19,water:10,packKg:30,price:320000},
+{producer:'PT Matahari Sakti',name:'Prima Feed 891',protein:14,water:12,packKg:30,price:280000},
+{producer:'PT New Hope',name:'833-2',protein:33,water:10,packKg:30,price:450000},
+{producer:'PT New Hope',name:'833-3',protein:33,water:10,packKg:30,price:450000},
+{producer:'PT New Hope',name:'834-2',protein:28,water:12,packKg:30,price:370000},
+{producer:'PT New Hope',name:'834-3',protein:28,water:12,packKg:30,price:370000},
+{producer:'PT Sinta Prima',name:'LJA-2',protein:28,water:12,packKg:30,price:440000},
+{producer:'PT Sinta Prima',name:'LJA-3',protein:28,water:12,packKg:30,price:440000},
+{producer:'PT Sinta Prima',name:'SNA-3',protein:32,water:12,packKg:30,price:385000}
+];
+function applyFeedProduct(i){let sel=$('feed'+i+'Name'),manual=$('feed'+i+'ManualName');if(!sel)return;if(sel.value==='__manual__'){if(manual)manual.style.display='block';['Price','Protein','Water'].forEach(k=>{let e=$('feed'+i+k);if(e)e.value=''})}else{if(manual)manual.style.display='none';let p=FEED_PRODUCTS.find(x=>x.name===sel.value);if(p){$('feed'+i+'Price').value=p.price;$('feed'+i+'Protein').value=p.protein;$('feed'+i+'Water').value=p.water;$('feed'+i+'Unit').value='kg';if(!$('feed'+i+'Qty').value)$('feed'+i+'Qty').value=p.packKg}}calcCapacity();renderSopProjectCard?.()}
+function normalizedFeedName(i){let sel=$('feed'+i+'Name');if(!sel)return '';return sel.value==='__manual__'?($('feed'+i+'ManualName')?.value||''):sel.value}
+
+const costDefs=[['aeratorWatt','Total Daya Peralatan (Watt)',100],['hours','Jam Nyala / Hari',24],['tariff','Tarif Listrik / kWh',1444],['laborQty','Jumlah Tenaga Kerja',1],['laborUnit','Satuan Tenaga Kerja','orang/siklus'],['labor','Harga / Satuan Tenaga Kerja',0],['medicineQty','Jumlah Obat/Vitamin',1],['medicineUnit','Satuan Obat/Vitamin','paket'],['medicine','Harga / Satuan Obat/Vitamin',0],['transportQty','Jumlah Transportasi',1],['transportUnit','Satuan Transportasi','trip'],['transport','Harga / Satuan Transportasi',0],['depreciationQty','Jumlah Penyusutan',1],['depreciationUnit','Satuan Penyusutan','siklus'],['depreciation','Harga / Satuan Penyusutan',0],['miscQty','Jumlah Lain-lain',1],['miscUnit','Satuan Lain-lain','manual'],['misc','Harga / Satuan Lain-lain',0],['sellPrice','Harga Jual Ikan / kg',26000]];
+function inp(id,label,type='number',val=''){if(type==='system')return `<div class="field"><label>${label}</label><select id="${id}"><option value="Bioflok">Bioflok</option><option value="Konvensional">Konvensional</option><option value="Konvensional / Semi-intensif">Konvensional / Semi-intensif</option><option value="Konvensional + Filtrasi">Konvensional + Filtrasi</option></select></div>`;if(type==='select')return `<div class="field"><label>${label}</label><select id="${id}"><option>Kolam Bundar</option><option>Kolam Persegi</option></select></div>`;return `<div class="field"><label>${label}</label><input id="${id}" type="${type}" value="${val??''}" step="any"></div>`}
+function renderSetupFields(){
+setupFields.innerHTML=fields.map(x=>inp(...x)).join('');
+seedFields.innerHTML=`<div class="field"><label>Jenis Ikan</label><select id="fishType"><option value="">-- Pilih Jenis Ikan --</option><option>Nila</option><option>Lele</option><option>Bawal</option><option>Gurame</option><option>Mas</option><option>Koi</option><option>Nilem</option></select></div>`+inp('seedWeight','Bobot Awal (g/ekor)','number','')+inp('seedPrice','Harga Bibit / ekor','number','')+inp('targetHarvestWeight','Target Bobot Panen (g/ekor)','number','')+inp('actualSeedCount','Jumlah Tebar Aktual (ekor)','number','');
+feedPhaseRows.innerHTML=[1,2,3].map((i)=>`<tr><td>Fase ${i}</td><td><select id="feed${i}Name" onchange="applyFeedProduct(${i})"><option value="">-- Pilih Pakan --</option>${FEED_PRODUCTS.map(p=>`<option value="${p.name}">${p.name} — ${p.producer}</option>`).join('')}<option value="__manual__">+ Pakan lainnya / manual</option></select><input id="feed${i}ManualName" type="text" value="" placeholder="Nama pakan manual" style="display:none;margin-top:6px"></td><td><input id="feed${i}Qty" type="number" value="" placeholder="Jumlah"></td><td><input id="feed${i}Unit" type="text" value="" placeholder="kg"></td><td><input id="feed${i}Price" type="number" value="" placeholder="Harga (bisa diedit)"></td><td><input id="feed${i}Protein" type="number" value="" placeholder="Protein %"></td><td><input id="feed${i}Water" type="number" value="" placeholder="Kadar air %"></td><td id="feed${i}UnitPrice">-</td></tr>`).join('');
+electricFields.innerHTML=inp('aeratorWatt','Total Daya Peralatan (Watt)','number','')+inp('hours','Jam Nyala / Hari','number','')+inp('tariff','Tarif Listrik / kWh','number','');
+otherCostRows.innerHTML=[['labor','Tenaga Kerja','orang/siklus'],['medicine','Obat / Vitamin','paket'],['transport','Transportasi','trip'],['depreciation','Penyusutan Peralatan','siklus'],['misc','Lain-lain','manual']].map(x=>`<tr><td>${x[1]}</td><td><input id="${x[0]}Qty" type="number" value=""></td><td><input id="${x[0]}Unit" type="text" value="${x[2]}"></td><td><input id="${x[0]}" type="number" value=""></td><td id="${x[0]}Total">Rp 0</td></tr>`).join('');
+saleFields.innerHTML=inp('sellPrice','Harga Jual Ikan / kg','number','');
+cnInputs.innerHTML=[
+['enzym','Aqua Enzym',70000,500,'g',2,0.5],
+['nitro','Nitrobacter',30000,100,'g',0,0.5]
+].map(x=>`<tr><td style="text-align:left"><input id="${x[0]}Name" type="text" value="${x[1]}" style="width:100%;font-weight:800" title="Nama bahan dapat diedit manual"><div class="note" style="margin-top:4px">Nama & dosis SOP dapat diedit manual</div></td><td><input id="${x[0]}Price" type="number" value="${x[2]}"></td><td><input id="${x[0]}Pack" type="number" value="${x[3]}"></td><td><input id="${x[0]}Measure" type="text" value="${x[4]}"></td><td><div style="display:grid;gap:5px"><label class="note">Dosis awal g/L</label><input id="${x[0]}DoseEarly" type="number" min="0" step="0.01" value="${x[5]}" title="Dosis fase awal per liter Air Kultur"><label class="note">Dosis lanjut g/L</label><input id="${x[0]}DoseLate" type="number" min="0" step="0.01" value="${x[6]}" title="Dosis fase lanjutan per liter Air Kultur"><small>Harga/g: <span id="${x[0]}Unit">${x[3]?F(x[2]/x[3]):''}</span></small></div></td></tr>`).join('')+`<tr><td style="text-align:left"><select id="carbonSource" onchange="applyCarbonSource()"><option value="Gula Pasir">Gula Pasir</option><option value="Molase">Molase</option></select></td><td><input id="sugarPrice" type="number" value="18000"></td><td><input id="sugarPack" type="number" value="1000"></td><td><input id="sugarMeasure" type="text" value="g"></td><td id="sugarUnit">18</td></tr>`;
+// Project baru dimulai manual/kosong. Hanya pilihan struktur yang tersedia sebelum Terapkan SOP.
+['projectName','startDate','duration','poolCount','diameter','length','width','height','density','targetFcr','actualSeedCount'].forEach(id=>{if($(id))$(id).value=''});
+if($('cultivationSystem'))$('cultivationSystem').selectedIndex=0;
+if($('poolType'))$('poolType').selectedIndex=0;
+// Susun field Project manual sesuai urutan; parameter teknis hasil SOP berada di bagian Bibit Ikan.
+let tech=$('sopTechnicalFields');['duration','density','targetFcr'].forEach(id=>{let el=$(id)?.closest('.field');if(el&&tech){tech.appendChild(el);el.style.display='block'}});let tf=$('targetFcr');if(tf){tf.readOnly=false;tf.disabled=false;tf.step='0.01';tf.min='0';tf.placeholder='FCR SOP — dapat diedit';}
+let sf=$('setupFields');['projectName','startDate','cultivationSystem','poolType','poolCount','diameter','length','width','height'].forEach(id=>{let el=$(id)?.closest('.field');if(el&&sf)sf.appendChild(el)});
+document.querySelectorAll('#setup input,#setup select').forEach(x=>x.addEventListener('input',calcCapacity));
+}
+function addCnMaterial(data={}){let tb=$('cnInputs');if(!tb)return;let idx=tb.querySelectorAll('tr[data-extra-cn]').length;let tr=document.createElement('tr');tr.dataset.extraCn='1';tr.innerHTML=`<td style="text-align:left"><input class="extraCnName" type="text" value="${data.name||''}" placeholder="Nama bahan"></td><td><input class="extraCnPrice" type="number" value="${data.price||''}" placeholder="Harga"></td><td><input class="extraCnPack" type="number" value="${data.pack||''}" placeholder="Isi"></td><td><input class="extraCnMeasure" type="text" value="${data.measure||'g'}"></td><td><button type="button" class="btn r" style="padding:6px 9px" onclick="this.closest('tr').remove()">Hapus</button></td>`;tb.appendChild(tr)}
+function getExtraCn(){return [...document.querySelectorAll('#cnInputs tr[data-extra-cn]')].map(tr=>({name:tr.querySelector('.extraCnName')?.value||'',price:tr.querySelector('.extraCnPrice')?.value||'',pack:tr.querySelector('.extraCnPack')?.value||'',measure:tr.querySelector('.extraCnMeasure')?.value||'g'})).filter(x=>x.name||x.price||x.pack)}
+function loadExtraCn(arr){document.querySelectorAll('#cnInputs tr[data-extra-cn]').forEach(x=>x.remove());(Array.isArray(arr)?arr:[]).forEach(addCnMaterial)}
+function loadSetup(){let s=S();[...fields.map(x=>x[0]),...feedDefs.map(x=>x[0]),...costDefs.map(x=>x[0]),'duration','density','targetFcr','enzymName','enzymPrice','enzymPack','enzymMeasure','enzymDoseEarly','enzymDoseLate','nitroName','nitroPrice','nitroPack','nitroMeasure','nitroDoseEarly','nitroDoseLate','sugarPrice','sugarPack','sugarMeasure','molasePrice','molasePack','molaseMeasure'].forEach(id=>{if($(id)&&s[id]!==undefined)$(id).value=s[id]});loadExtraCn(s.extraCn);[1,2,3].forEach(i=>{let e=$('feed'+i+'Name'),v=s['feed'+i+'Name'];if(e&&v&&!FEED_PRODUCTS.some(p=>p.name===v)){let o=document.createElement('option');o.value=v;o.textContent=v+' — tersimpan';e.appendChild(o);e.value=v}});calcCapacity()}
+function calcCapacity(){let type=poolType.value;['diameter','length','width'].forEach(id=>{let e=$(id)?.closest('.field');if(e)e.style.display=(type==='Kolam Bundar'?(id==='diameter'):(id!=='diameter'))?'':'none'});let c=N(poolCount.value),h=N(height.value),area=type==='Kolam Bundar'?3.14*Math.pow(N(diameter.value)/2,2)*c:N(length.value)*N(width.value)*c,vol=area*h,sys=$('cultivationSystem')?.value||'Bioflok',seed=(sys==='Bioflok'||sys==='Konvensional + Filtrasi')?vol*N(density.value):area*N(density.value),actualSeed=N($('actualSeedCount')?.value),usedSeed=actualSeed>0?actualSeed:seed;capacity.innerHTML=[['Volume Air',F(vol)+' m³','blue'],['Luas Kolam',F(area)+' m²','cyan'],['Jumlah Tebar '+(actualSeed>0?'Aktual':'SOP'),F(usedSeed)+' ekor','green'],['Aerasi Rekomendasi',F(vol*30)+' L/menit','orange'],['Target Panen',duration.value&&startDate.value?add(startDate.value,N(duration.value)):'-','purple']].map(x=>`<div class="kpi ${x[2]}">${x[0]}<b>${x[1]}</b></div>`).join('');['enzym','nitro','sugar'].forEach(k=>$(k+'Unit').textContent=Rp(N($(k+'Price').value)/Math.max(N($(k+'Pack').value),1)));[1,2,3].forEach(i=>{let e=$('feed'+i+'UnitPrice');if(e)e.textContent=Rp(N($('feed'+i+'Price').value)/Math.max(N($('feed'+i+'Qty').value),1))+' / '+($('feed'+i+'Unit').value||'satuan')});['labor','medicine','transport','depreciation','misc'].forEach(k=>{let e=$(k+'Total');if(e)e.textContent=Rp(N($(k+'Qty').value)*N($(k).value))});let kwh=N($('aeratorWatt').value)/1000*N($('hours').value)*N($('duration').value),ec=kwh*N($('tariff').value);if($('electricPreview'))electricPreview.innerHTML=[['Energi / Siklus',F(kwh)+' kWh','blue'],['Biaya / Hari',Rp(N($('aeratorWatt').value)/1000*N($('hours').value)*N($('tariff').value)),'orange'],['Biaya / Siklus',Rp(ec),'green']].map(x=>`<div class="kpi ${x[2]}">${x[0]}<b>${x[1]}</b></div>`).join('');}
+function saveSetup(){
+  /* FCR hasil edit pada kartu SOP adalah FCR final saat Simpan & Hitung Project. */
+  const editedFcr=N($('sopCardFcrEdit')?.value);
+  if(editedFcr>0&&$('targetFcr'))$('targetFcr').value=editedFcr;
+
+[1,2,3].forEach(i=>{let e=$('feed'+i+'Name');if(e&&e.value==='__manual__'){let n=$('feed'+i+'ManualName')?.value||'';if(n){let o=document.createElement('option');o.value=n;o.textContent=n;e.appendChild(o);e.value=n}}});
+if(!db.active||!db.projects[db.active]){let k='p'+Date.now()+'_'+Math.random().toString(36).slice(2,6);db.projects[k]={name:'Project Baru',setup:{},actual:{}};db.active=k}
+let s={};[...fields.map(x=>x[0]),...feedDefs.map(x=>x[0]),...costDefs.map(x=>x[0]),'duration','density','targetFcr','enzymName','enzymPrice','enzymPack','enzymMeasure','enzymDoseEarly','enzymDoseLate','nitroName','nitroPrice','nitroPack','nitroMeasure','nitroDoseEarly','nitroDoseLate','sugarPrice','sugarPack','sugarMeasure','molasePrice','molasePack','molaseMeasure'].forEach(id=>s[id]=$(id)?.value||'');
+if(editedFcr>0)s.targetFcr=String(editedFcr);
+
+if(!s.projectName.trim()){alert('Nama Project wajib diisi.');$('projectName')?.focus();return}
+if(!s.startDate){alert('Tanggal Mulai / DOC 0 wajib diisi.');$('startDate')?.focus();return}
+if(!s.fishType){alert('Jenis Ikan wajib dipilih.');$('fishType')?.focus();return}
+if(N(s.seedWeight)<=0||N(s.targetHarvestWeight)<=N(s.seedWeight)){alert('Bobot awal dan Target Bobot Panen belum valid.');return}
+if(N(s.duration)<=0||N(s.density)<=0||N(s.targetFcr)<=0){alert('Klik Terapkan SOP terlebih dahulu agar Lama Budidaya, Padat Tebar dan Target FCR terisi.');return}
+let vol=s.poolType==='Kolam Bundar'?3.14*Math.pow(N(s.diameter)/2,2)*N(s.height)*N(s.poolCount):N(s.length)*N(s.width)*N(s.height)*N(s.poolCount);
+let area=s.poolType==='Kolam Bundar'?3.14*Math.pow(N(s.diameter)/2,2)*N(s.poolCount):N(s.length)*N(s.width)*N(s.poolCount);s.volume=vol;s.area=area;
+let sopSeedCount=(s.cultivationSystem==='Bioflok'||s.cultivationSystem==='Konvensional + Filtrasi')?vol*N(s.density):area*N(s.density);s.sopSeedCount=sopSeedCount;s.seedCount=N(s.actualSeedCount)>0?N(s.actualSeedCount):sopSeedCount;s.extraCn=getExtraCn();
+if(N(s.seedCount)<=0){alert('Jumlah tebar masih 0. Isi Jumlah Tebar Aktual atau lengkapi ukuran kolam lalu Terapkan SOP.');return}
+let id=db.active;db.projects[id].name=s.projectName;db.projects[id].setup=s;db.projects[id].actual=db.projects[id].actual||{};save();
+if($('targetFcr'))$('targetFcr').value=s.targetFcr;
+if($('sopCardFcrEdit'))$('sopCardFcrEdit').value=s.targetFcr;
+// verifikasi hasil benar-benar tersimpan sebelum pindah modul
+let check=JSON.parse(localStorage.getItem('tiaraD2logic')||'{}');if(!check.projects||!check.projects[id]||!check.projects[id].setup||!N(check.projects[id].setup.seedCount)){alert('Project gagal tersimpan di perangkat. Coba cek penyimpanan browser/PWA.');return}
+refreshAll();go('dashboard');
+}
+function fr(day){return day<9?.01:day<17?.02:day<25?.03:day<65?.05:day<101?.03:.02}function phase(day){return day<65?1:day<101?2:3}function cnTarget(day){return day<65?15:day<101?12.5:7.5}function feedName(day,s){return s['feed'+phase(day)+'Name']||('Fase '+phase(day))}
+function model(){
+  const s=S();
+  if(!s.startDate)return [];
+
+  if(!N(s.seedCount)){
+    const base=(s.cultivationSystem==='Bioflok'||s.cultivationSystem==='Konvensional + Filtrasi')
+      ?N(s.volume)*N(s.density):N(s.area)*N(s.density);
+    s.seedCount=N(s.actualSeedCount)>0?N(s.actualSeedCount):base;
+  }
+  if(!N(s.seedCount)||!N(s.duration))return [];
+
+  const actual=P().actual||{};
+  const pop0=N(s.seedCount);
+  const seedW=N(s.seedWeight)||10;
+  const targetW=N(s.targetHarvestWeight)||330;
+  const dur=N(s.duration)||120;
+  const targetFcr=N(s.targetFcr)||1.2;
+  const rows=[];
+
+  /* 1. BASELINE SOP/PROJECT.
+     Actual tidak menggeser hari lain. */
+  let planPop=pop0;
+  for(let day=0;day<=dur;day++){
+    const date=add(s.startDate,day);
+    const a=actual[date]||{};
+    const progress=dur?clamp(day/dur,0,1):1;
+    const smooth=progress*progress*(3-2*progress);
+    const planWeight=seedW+(targetW-seedW)*smooth;
+    const planDeath=day===0?pop0*.05:(day===1?15:0);
+
+    /* Actual hanya override tanggal ini. */
+    const death=(a.death!==undefined&&a.death!=='')?N(a.death):planDeath;
+    const weight=(a.weight!==undefined&&a.weight!=='')?N(a.weight):planWeight;
+    const pop=planPop;
+    const biomass=pop*weight;
+    const feedRate=fr(Math.max(day,1));
+
+    rows.push({
+      day,week:Math.floor(Math.max(day-1,0)/8)+1,date,
+      feedName:feedName(day,s),death,pop,weight,biomass,
+      fr:feedRate,rec:0,feed:0,absorb:0,C:0,Nit:0,ratio:0,
+      target:cnTarget(day),needC:0,actual:!!actual[date],
+      _feedWeight:day===0?0:biomass*feedRate
+    });
+
+    /* Populasi target hari berikutnya tetap baseline SOP.
+       Kematian actual tidak mendistribusikan ulang target hari lain. */
+    if(day===0)planPop=Math.max(0,pop0-planDeath);
+    else planPop=Math.max(0,planPop-planDeath);
+  }
+
+  /* 2. TARGET TOTAL PAKAN dari FCR SOP/Project.
+     FCR = total pakan / pertambahan biomassa.
+     FR hanya menentukan proporsi distribusi harian. */
+  const baseInitialBio=pop0*seedW;
+  const baseFinalPop=rows[rows.length-1].pop;
+  const baseFinalBio=baseFinalPop*targetW;
+  const biomassGain=Math.max(0,baseFinalBio-baseInitialBio);
+  const targetFeedTotal=biomassGain*targetFcr; // gram
+  const weightSum=rows.reduce((q,r)=>q+N(r._feedWeight),0);
+  const scale=weightSum>0?targetFeedTotal/weightSum:0;
+
+  /* 3. Rekom. Pakan baseline + override Actual pada tanggal yang diinput. */
+  rows.forEach((r,i)=>{
+    if(i===0){r.rec=0;r.feed=0;return;}
+    const a=actual[r.date]||{};
+    const hasFeed=a.feed!==undefined&&a.feed!=='';
+    const hasC=a.cn!==undefined&&a.cn!=='';
+
+    const targetRec=N(r._feedWeight)*scale;
+    r.rec=hasFeed?N(a.feed):targetRec;
+    r.feed=r.rec;
+
+    /* FR efektif mengikuti rekomendasi hasil normalisasi FCR. */
+    r.fr=r.biomass?r.rec/r.biomass:0;
+    r.absorb=r.feed*.5;
+
+    const ph=phase(r.day);
+    const protein=(N(s['feed'+ph+'Protein'])||28)/100;
+    const water=(N(s['feed'+ph+'Water'])||12)/100;
+    const dry=1-water;
+
+    r.C=hasC?N(a.cn):r.feed*dry*.70*.5;
+    r.Nit=r.feed*dry*.70*protein/6.25;
+    r.ratio=r.Nit?r.C/r.Nit:0;
+    r.needC=Math.max(0,(r.target*r.Nit-r.C)/.5);
+    delete r._feedWeight;
+  });
+
+  /* ACTUAL SEBAGAI ANCHOR, ADG TETAP SOP
+     - Sebelum tanggal actual: bobot mengikuti kurva/rencana SOP.
+     - Pada tanggal Bobot Sampling Aktual: bobot = nilai actual.
+     - Setelah tanggal actual terakhir: pertumbuhan kembali mengikuti ADG SOP,
+       tetapi dimulai dari bobot actual terakhir sebagai patokan baru.
+     - Jika ada actual baru lagi, anchor berpindah ke actual terbaru.
+     - Saat bobot proyeksi mencapai Target Bobot Panen, model berhenti. */
+  const weightAnchors=[];
+  Object.keys(actual).forEach(d=>{
+    const a=actual[d]||{};
+    if(a.weight!==undefined && a.weight!=='' && N(a.weight)>0){
+      const di=rows.findIndex(r=>r.date===d);
+      if(di>=0)weightAnchors.push({i:di,day:rows[di].day,weight:N(a.weight)});
+    }
+  });
+  weightAnchors.sort((a,b)=>a.day-b.day);
+
+  /* ADG SOP = kenaikan bobot SOP per hari berdasarkan Bobot Awal,
+     Target Bobot Panen dan Lama Budidaya Otomatis. */
+  const sopADG=Math.max(0,(targetW-(N(s.seedWeight)||10))/Math.max(1,N(s.duration)||1));
+
+  if(weightAnchors.length){
+    weightAnchors.forEach((an,k)=>{
+      const nextIndex=(k+1<weightAnchors.length)?weightAnchors[k+1].i:rows.length;
+
+      /* Tanggal actual menjadi anchor baru. */
+      rows[an.i].weight=an.weight;
+      rows[an.i].biomass=rows[an.i].pop*an.weight;
+
+      /* Sesudah anchor tetap menggunakan ADG SOP. */
+      for(let j=an.i+1;j<nextIndex;j++){
+        rows[j].weight=Math.min(targetW,an.weight+sopADG*(rows[j].day-an.day));
+        rows[j].biomass=rows[j].pop*rows[j].weight;
+      }
+    });
+
+    /* Karena bobot/biomassa berubah, komponen Daily Management dihitung ulang
+       dari bobot proyeksi terbaru. Pakan Actual pada tanggal yang diinput tetap override. */
+    const initialBio=N(rows[0].biomass);
+    const finalCandidate=N(rows[rows.length-1].biomass);
+    const targetTotal=Math.max(0,finalCandidate-initialBio)*(N(s.targetFcr)||1.2);
+    let wsum=0;
+    rows.forEach((r,i)=>{ if(i>0)wsum+=N(r.biomass)*fr(Math.max(r.day,1)); });
+    const feedScale=wsum>0?targetTotal/wsum:0;
+
+    rows.forEach((r,i)=>{
+      if(i===0){r.rec=0;r.feed=0;return;}
+      const a=actual[r.date]||{};
+      const hasFeed=a.feed!==undefined&&a.feed!=='';
+      const hasC=a.cn!==undefined&&a.cn!=='';
+      const targetRec=N(r.biomass)*fr(Math.max(r.day,1))*feedScale;
+      r.rec=hasFeed?N(a.feed):targetRec;
+      r.feed=r.rec;
+      r.fr=r.biomass?r.rec/r.biomass:0;
+      r.absorb=r.feed*.5;
+      const ph=phase(r.day);
+      const protein=(N(s['feed'+ph+'Protein'])||28)/100;
+      const water=(N(s['feed'+ph+'Water'])||12)/100;
+      const dry=1-water;
+      r.C=hasC?N(a.cn):r.feed*dry*.70*.5;
+      r.Nit=r.feed*dry*.70*protein/6.25;
+      r.ratio=r.Nit?r.C/r.Nit:0;
+      r.needC=Math.max(0,(r.target*r.Nit-r.C)/.5);
+    });
+  }
+
+  /* ACTUAL / PROYEKSI HARVEST CUTOFF:
+     Begitu Berat/ekor hasil actual + ADG mencapai Target Bobot Panen,
+     hari itu menjadi batas akhir Daily Management. */
+  let harvestCut=-1;
+  for(let i=1;i<rows.length;i++){
+    if(N(rows[i].weight)>=targetW){
+      harvestCut=i;
+      break;
+    }
+  }
+  if(harvestCut>0)rows.splice(harvestCut+1);
+
+  if((s.cultivationSystem||'Bioflok')!=='Bioflok'){
+    rows.forEach(r=>{r.target=0;r.needC=0;r.C=0;r.Nit=0;r.ratio=0;});
+  }
+  return rows;
+}
+
+function totalFeedActual(m){
+  if(!m||!m.length)return 0;
+  /* Total Pakan Actual = jumlah seluruh kolom "Rekom. Pakan g" Daily Management. */
+  return m.slice(1).reduce((sum,r)=>sum+N(r.rec),0);
+}
+function totalFeedDynamic(m){
+  if(!m||!m.length)return 0;
+  /* model().rec/feed already contains target on normal days and Actual on edited dates. */
+  return m.slice(1).reduce((sum,r)=>sum+N(r.feed),0);
+}
+function totalFeedActualToDate(m){
+  if(!m||!m.length)return 0;
+  const idx=latestActualIndex(m);
+  if(idx<1)return 0;
+  return m.slice(1,idx+1).reduce((sum,r)=>sum+N(r.feed),0);
+}
+function totalFeedTargetOnly(m){
+  if(!m||!m.length)return 0;
+  /* Mengikuti panjang model aktif. Jika Actual mencapai target lebih awal,
+     total target juga berhenti di hari panen aktual. */
+  return m.slice(1).reduce((sum,r)=>sum+N(r.rec),0);
+}
+function cnWeekRows(m){if((S().cultivationSystem||'Bioflok')!=='Bioflok')return [];let weeks=[...new Set(m.filter(x=>x.day>0).map(x=>x.week))];return weeks.map(w=>{let rows=m.filter(x=>x.week===w&&x.day>0),x=rows[0],feed=rows.reduce((a,r)=>a+r.feed,0),needC=rows.reduce((a,r)=>a+r.needC,0),actualC=rows.reduce((a,r)=>a+r.C,0),ss=S(),height=w<=2?30:100,totalAir=N(ss.volume)*(height/100),apk=(w===1||N(x.feed)===0)?'Apk':'-',airCulture=needC>0?(apk==='Apk'?totalAir+(feed*.15/100):(feed*.15/100)):(feed*.15/100),sugarCulture=airCulture*10,enzEarly=N(S().enzymDoseEarly);if(!Number.isFinite(enzEarly)||S().enzymDoseEarly===undefined||S().enzymDoseEarly==='')enzEarly=2;
+let enzLate=N(S().enzymDoseLate);if(!Number.isFinite(enzLate)||S().enzymDoseLate===undefined||S().enzymDoseLate==='')enzLate=.5;
+let nitEarly=N(S().nitroDoseEarly);if(!Number.isFinite(nitEarly)||S().nitroDoseEarly===undefined||S().nitroDoseEarly==='')nitEarly=0;
+let nitLate=N(S().nitroDoseLate);if(!Number.isFinite(nitLate)||S().nitroDoseLate===undefined||S().nitroDoseLate==='')nitLate=.5;
+let enz=airCulture*(w<=4?enzEarly:enzLate),nit=airCulture*(w<=3?nitEarly:nitLate);return {week:w,date:x.date,apk,height,totalAir,feed,airCulture,sugarCulture,sugarCN:actualC,enz,nit,target:x.target}})}
+function latestActualIndex(m){
+  const actual=P().actual||{};
+  for(let i=m.length-1;i>0;i--){
+    const a=actual[m[i].date];
+    if(a && Object.values(a).some(v=>v!==''&&v!==undefined&&v!==null))return i;
+  }
+  return -1;
+}
+function effectiveFCR(m, uptoIndex){
+  const i=typeof uptoIndex==='number'?uptoIndex:latestActualIndex(m);
+  return i>0?actualFCR(m,i):(N(S().targetFcr)||1.2);
+}
+function totalActualFeedToIndex(m,idx){
+  const actual=P().actual||{};
+  let total=0;
+  if(!m||!m.length)return total;
+  const end=Math.max(0,Math.min(idx,m.length-1));
+  for(let i=1;i<=end;i++){
+    const a=actual[m[i].date]||{};
+    if(a.feed!==undefined&&a.feed!=='')total+=N(a.feed);
+  }
+  return total;
+}
+function FCRfmt(v){return Number(N(v)).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function actualFCR(m, uptoIndex){
+  if(!m||m.length<2)return null;
+
+  /* Sesuai definisi aplikasi:
+     FCR Aktual = Total Pakan Actual ÷ Biomassa Panen.
+     Total Pakan Actual = Σ Rekom. Pakan g Daily Management.
+     Keduanya dalam gram sehingga rasio langsung konsisten. */
+  const totalFeed=totalFeedActual(m);
+  const harvestBiomass=N(m[m.length-1].biomass);
+
+  if(!(harvestBiomass>0))return null;
+  const fcr=totalFeed/harvestBiomass;
+  return Number.isFinite(fcr)&&fcr>=0?fcr:null;
+}
+function weightChartHTML(m,title){if(!m||!m.length)return '';let pts=m.filter(x=>x.day%10===0||x.day===m[m.length-1].day),W=920,H=300,pL=62,pR=24,pT=42,pB=52,maxY=Math.max(10,...pts.map(x=>N(x.weight)))*1.12,maxDay=Math.max(1,...pts.map(x=>N(x.day))),x=d=>pL+(N(d)/maxDay)*(W-pL-pR),y=v=>H-pB-(N(v)/maxY)*(H-pT-pB);let grid=[0,.25,.5,.75,1].map(q=>{let yy=y(maxY*q);return `<line x1="${pL}" y1="${yy}" x2="${W-pR}" y2="${yy}" stroke="#dbe8f1"/><text x="${pL-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#60758a">${F(maxY*q)}</text>`}).join(''),path=pts.map((p,i)=>`${i?'L':'M'} ${x(p.day).toFixed(1)} ${y(p.weight).toFixed(1)}`).join(' '),dots=pts.map(p=>`<circle cx="${x(p.day)}" cy="${y(p.weight)}" r="5" fill="#078de5" stroke="white" stroke-width="2"/><text x="${x(p.day)}" y="${y(p.weight)-12}" text-anchor="middle" font-size="11" font-weight="800" fill="#0b3155">${F(p.weight)} g</text><text x="${x(p.day)}" y="${H-pB+22}" text-anchor="middle" font-size="10" fill="#60758a">H${p.day}</text>`).join('');return `<div class="card weight-chart-card" style="margin-top:18px"><div class="summary-head"><div class="summary-icon">⚖️</div><div><div class="summary-title">${title||'Perkembangan Berat / Ekor'}</div><div class="summary-sub">Titik setiap 10 hari • gram/ekor</div></div></div><div style="overflow-x:auto"><svg viewBox="0 0 ${W} ${H}" style="width:100%;min-width:720px;height:auto">${grid}<line x1="${pL}" y1="${pT}" x2="${pL}" y2="${H-pB}" stroke="#8aa5b8"/><line x1="${pL}" y1="${H-pB}" x2="${W-pR}" y2="${H-pB}" stroke="#8aa5b8"/><path d="${path}" fill="none" stroke="#078de5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${dots}</svg></div></div>`}
+
+
+function resetPoolActualForDate(date,poolMode){
+  if(!date)return;
+  if(poolMode==='all'){
+    if(P().actual) delete P().actual[date];
+    if(P().poolActual) delete P().poolActual[date];
+  }else{
+    if(P().poolActual&&P().poolActual[date]){
+      delete P().poolActual[date][String(poolMode)];
+      if(!Object.keys(P().poolActual[date]).length) delete P().poolActual[date];
+    }
+    // Rebuild aggregate from remaining pool inputs; if none remain, clear aggregate.
+    const remaining=P().poolActual&&P().poolActual[date]&&Object.keys(P().poolActual[date]).length;
+    if(remaining) syncAggregateActualFromPools(date);
+    else if(P().actual) delete P().actual[date];
+  }
+}
+function resetDailyRowPool(date){
+  const ctx=modulePoolContext('dailyPoolMode');
+  resetPoolActualForDate(date,ctx.mode);
+  save(); renderDaily(); renderDashboard(); renderFinance(); renderSummary(); renderActivity();
+}
+function resetAllDailyPool(){
+  const ctx=modulePoolContext('dailyPoolMode');
+  if(ctx.mode==='all'){
+    P().actual={}; P().poolActual={};
+  }else{
+    const pa=P().poolActual||{};
+    Object.keys(pa).forEach(date=>{
+      if(pa[date]) delete pa[date][String(ctx.mode)];
+      if(pa[date]&&!Object.keys(pa[date]).length) delete pa[date];
+      if(pa[date]&&Object.keys(pa[date]).length) syncAggregateActualFromPools(date);
+      else if(P().actual) delete P().actual[date];
+    });
+    P().poolActual=pa;
+  }
+  save(); renderDaily(); renderDashboard(); renderFinance(); renderSummary(); renderActivity();
+}
+
+function modulePoolContext(selectId){
+ const count=Math.max(1,Math.round(N(S().poolCount)||1)),el=document.getElementById(selectId);
+ if(!el)return {mode:'all',count,factor:1,label:'Semua Kolam'};
+ const prev=el.value||'all';
+ el.innerHTML='<option value="all">Semua Kolam</option>'+Array.from({length:count},(_,i)=>`<option value="${i+1}">Kolam ${i+1}</option>`).join('');
+ el.style.display=count>1?'':'none'; el.value=[...el.options].some(o=>o.value===prev)?prev:'all';
+ const mode=el.value; return {mode,count,factor:mode==='all'?1:1/count,label:mode==='all'?'Semua Kolam':'Kolam '+mode};
+}
+
+function renderDashboard(){
+  const poolCtx=modulePoolContext('dashboardPoolMode'),pf=poolCtx.factor;
+  let m=model(),s=S();
+  if(!m.length){dashEmpty.style.display='block';dashBody.style.display='none';dashEmpty.innerHTML='Isi dan simpan Project terlebih dahulu.';return}
+  dashEmpty.style.display='none';dashBody.style.display='block';
+  let last=m[m.length-1], first=m[0], feed=totalFeedActual(m)/1000, deaths=m.reduce((a,x)=>a+x.death,0), sr=first.pop?last.pop/first.pop*100:0;
+  let fcr=actualFCR(m), adg=(last.weight-first.weight)/Math.max(last.day,1), actualCount=Object.keys(P().actual||{}).length;
+  projectHero.innerHTML=`<span>PROJECT AKTIF</span><b>${P().name||'Project Baru'}</b><span>${poolCtx.label} • ${s.fishType||'Ikan'} • ${s.poolType||'-'} • ${F(s.volume)} m³ • ${s.startDate||'-'} s/d ${m.length?m[m.length-1].date:(s.startDate?add(s.startDate,N(s.duration)):'-')}</span>`;
+  dashKpi.innerHTML=[['Populasi Awal',F(first.pop*pf)+' ekor','blue'],['Populasi Akhir',F(last.pop*pf)+' ekor','green'],['Biomassa Panen',F((last.biomass*pf)/1000)+' kg','orange'],['FCR Aktual',fcr!==null?FCRfmt(fcr):'-','purple'],['SR',F(sr)+'%','red'],['Total Pakan Actual',Number(feed*pf).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:3})+' kg','cyan'],['Total Pakan Target',Number((totalFeedTargetOnly(m)/1000)*pf).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:3})+' kg','blue'],['ADG',F(adg)+' g/hari','green'],['Kematian',F(deaths*pf)+' ekor','red'],['Target FCR',F(s.targetFcr||0),'orange']].map(x=>`<div class="kpi ${x[2]}">${x[0]}<b>${x[1]}</b></div>`).join('');
+  dashSummary.innerHTML=`<div class="summary-card"><div class="summary-head"><div class="summary-icon">🐟</div><div><div class="summary-title">Ringkasan Siklus Budidaya</div><div class="summary-sub"></div></div></div><div class="cycle-summary-grid summary-grid"><div class="mini-stat"><small>Jenis Ikan</small><b>${s.fishType||'-'}</b></div><div class="mini-stat"><small>Target Bobot Panen</small><b>${F(s.targetHarvestWeight)} g/ekor</b></div><div class="mini-stat"><small>Bobot Proyeksi</small><b>${F(last.weight)} g/ekor</b></div><div class="mini-stat"><small>Target / Aktual FCR</small><b>${F(s.targetFcr||0)} / ${fcr!==null?FCRfmt(fcr):'-'}</b></div><div class="mini-stat"><small>Lama Budidaya</small><b>${F(last.day)} hari</b></div><div class="mini-stat"><small>Padat Tebar</small><b>${F(s.density)} ekor/m³</b></div><div class="mini-stat"><small>Survival Rate</small><b>${F(sr)}%</b></div><div class="mini-stat"><small>Total Pakan</small><b>${Number(feed*pf).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:3})} kg</b></div><div class="mini-stat"><small>Pakan s/d Aktual</small><b>${F(totalFeedActualToDate(m)/1000)} kg</b></div></div></div>`;
+  dashSummary.innerHTML += weightChartHTML(m,'Perkembangan Berat / Ekor');
+}
+function updateDailyActual(date,key,value){
+  P().actual=P().actual||{}; P().actual[date]=P().actual[date]||{}; P().actual[date][key]=value; save(); refreshAll(); go('daily');
+}
+function renderDaily(){
+  const poolCtx=modulePoolContext('dailyPoolMode'),pf=poolCtx.factor;
+  let m=model();
+  if(!m.length){dailyRows.innerHTML='<tr><td colspan="14" style="text-align:center">Project belum disimpan.</td></tr>';return}
+  dailyRows.innerHTML=m.map((x,i)=>{let a=poolCtx.mode==='all'?((P().actual||{})[x.date]||{}):poolActualFor(x.date,poolCtx.mode),hasActual=Object.values(a).some(v=>v!==''&&v!==undefined&&v!==null),fcr=hasActual?actualFCR(m,i):null;return `<tr class="${x.date===today()?'today ':''}${hasActual?'actual':''}"><td>${x.day}</td><td>${x.week}</td><td>${x.date}</td><td>${x.feedName}</td><td>${F(x.death*pf)}${a.death!==undefined&&a.death!==''?'<div class="note">Aktual</div>':''}</td><td>${F(x.pop*pf)}</td><td>${F(x.weight)}${a.weight!==undefined&&a.weight!==''?'<div class="note">Aktual</div>':''}</td><td>${F((x.biomass*pf)/1000)}</td><td>${F(x.fr*100)}%</td><td><b>${F(x.rec*pf)}</b>${hasActual?`<div class="note">Aktual • FCR ${fcr!==null?FCRfmt(fcr):'-'}</div>`:`<div class="note">Target SOP • FCR ${F(N(S().targetFcr)||1.2)}</div>`}</td><td>${F(x.absorb*pf)}</td><td>${F(x.C*pf)}</td><td>${F(x.target)}</td><td>${F(x.ratio)}</td><td><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" type="button" onclick="editDaily('${x.date}')">Edit</button>${hasActual?`<button class="btn btn-reset-red" type="button" onclick="resetDailyRowPool('${x.date}')">Reset</button>`:''}</div></td></tr>`}).join('');
+}
+
+function resetDailyRow(date){
+  const p=P();
+  if(!p||!p.actual)return;
+  /* Reset hanya tanggal ini ke kondisi sebelum Actual / kembali ke SOP + anchor Actual sebelumnya. */
+  delete p.actual[date];
+  save();
+  refreshAll();
+}
+function resetAllActual(){
+  const p=P();
+  if(!p)return;
+  /* Reset seluruh Actual project aktif, sehingga semua baris kembali ke kondisi awal SOP/Project. */
+  p.actual={};
+  save();
+  refreshAll();
+}
+function editDaily(date){
+  actDate.value=date;
+  renderActivity();
+  go('activity');
+  setTimeout(()=>{let el=document.getElementById('aDeath');if(el)el.focus()},0);
+}
+
+function activityPoolCount(){ return Math.max(1,Math.round(N(S().poolCount)||1)); }
+function ensureActivityPoolSelector(){
+  const el=document.getElementById('actPoolMode');
+  if(!el)return 'all';
+  const count=activityPoolCount(), prev=el.value||'all';
+  if(count<=1){el.style.display='none';el.innerHTML='<option value="all">Semua Kolam</option>';el.value='all';return 'all';}
+  el.style.display='';
+  el.innerHTML='<option value="all">Semua Kolam</option>'+Array.from({length:count},(_,i)=>`<option value="${i+1}">Kolam ${i+1}</option>`).join('');
+  el.value=([...el.options].some(o=>o.value===prev)?prev:'all');
+  return el.value;
+}
+function poolActualFor(date,pool){
+  return (((P().poolActual||{})[date]||{})[String(pool)]||{});
+}
+function syncAggregateActualFromPools(date){
+  const count=activityPoolCount(), byDate=((P().poolActual||{})[date]||{});
+  const rows=Object.keys(byDate).filter(k=>byDate[k]&&Object.values(byDate[k]).some(v=>v!==''&&v!==undefined&&v!==null));
+  if(!rows.length)return;
+  let death=0,feed=0,cn=0,weights=[],notes=[];
+  rows.forEach(k=>{
+    const a=byDate[k]||{};
+    if(a.death!=='')death+=N(a.death);
+    if(a.feed!=='')feed+=N(a.feed);
+    if(a.cn!=='')cn+=N(a.cn);
+    if(a.weight!==''&&a.weight!==undefined)weights.push(N(a.weight));
+    if(String(a.note||'').trim())notes.push(`Kolam ${k}: ${String(a.note).trim()}`);
+  });
+  P().actual=P().actual||{};
+  P().actual[date]={
+    death: rows.some(k=>byDate[k].death!=='')?death:'',
+    weight: weights.length?weights.reduce((a,b)=>a+b,0)/weights.length:'',
+    feed: rows.some(k=>byDate[k].feed!=='')?feed:'',
+    cn: rows.some(k=>byDate[k].cn!=='')?cn:'',
+    note: notes.join(' | ')
+  };
+}
+
+function renderActivity(){let poolMode=ensureActivityPoolSelector(),poolCount=activityPoolCount(),poolFactor=poolMode==='all'?1:(1/poolCount);let m=model();if(!m.length){actKpi.innerHTML='<div class="card">Project belum disimpan.</div>';return}let date=actDate.value||today(),x=m.find(r=>r.date===date);if(!x){actKpi.innerHTML='<div class="card" style="grid-column:1/-1"><b>Tanggal di luar periode budidaya.</b><div class="note">Pilih tanggal antara '+S().startDate+' sampai '+add(S().startDate,N(S().duration))+'.</div></div>';actInputs.innerHTML='';actRec.innerHTML='';return}let a=poolMode==='all'?((P().actual||{})[date]||{}):poolActualFor(date,poolMode),usedFeed=m.filter(r=>r.date<=date).reduce((q,r)=>q+r.feed,0),futureFeed=m.filter(r=>r.date>date).reduce((q,r)=>q+r.feed,0),initial=m[0],sr=initial.pop?x.pop/initial.pop*100:0,hasActualDate=Object.values(a).some(v=>v!==''&&v!==undefined&&v!==null),fcr=hasActualDate?actualFCR(m,m.findIndex(r=>r.date===date)):null;actKpi.innerHTML=[['DOC',x.day,'blue'],['Week',x.week,'cyan'],['Jumlah Ikan',F(x.pop*poolFactor)+' ekor','green'],['Bio Massa',F((x.biomass*poolFactor)/1000)+' kg','orange'],['Bobot Aktual',F(x.weight)+' g','purple'],['SR',F(sr)+'%','red'],['Feeding Rate',F(x.fr*100)+'%','blue'],['FCR Aktual',fcr!==null?FCRfmt(fcr):'-','orange'],['Target FCR',F(N(S().targetFcr)||0),'cyan'],['/Kg',F(1000/x.weight)+' ekor','cyan']].map(z=>`<div class="kpi ${z[2]}">${z[0]}<b>${z[1]}</b></div>`).join('');actInputs.innerHTML=inp('aDeath','Kematian Aktual','number',a.death??'')+inp('aWeight','Bobot Sampling g','number',a.weight??'')+inp('aFeed','Pakan Aktual g','number',a.feed??'')+inp('aCn','Unsur C Aktual g (realisasi)','number',a.cn??'')+inp('aNote','Catatan','text',a.note??'')+`<div class="actual-save-row"><button class="btn actual-save-btn" type="button" onclick="saveActivity()">💾 Simpan Aktual</button></div>`;let cn=cnWeekRows(m),cnWeek=cn.find(r=>r.week===x.week),appToday=cn.find(r=>r.date===date&&r.apk==='Apk'),cultureTomorrow=cn.find(r=>r.date===add(date,1));
+if((S().cultivationSystem||'Bioflok')==='Bioflok'&&cnWeek){actKpi.innerHTML+=`<div class="kpi cyan">Ketinggian Air<b>${F(cnWeek.height)} Cm</b><small style="display:block;margin-top:4px"></small></div>`;}
+/* Sumber karbon Daily Activity:
+   DOC 0-19 = tampil setiap hari dari Daily Management (Unsur C).
+   DOC >=20 = tampil hanya 1x/minggu sampai panen, pada hari siklus yang sama dengan DOC 20.
+   Nilai harian/mingguan dibagi rata ke aplikasi 10.00 & 17.00. */
+let dmCarbon=N(x.C),carbonFirst20=x.day<20,carbonWeekly=x.day>=20&&((x.day-20)%7===0),showCarbon=carbonFirst20||carbonWeekly;
+let carbonToday=showCarbon?dmCarbon:0;actRec.parentElement.classList.add('summary-card');actRec.innerHTML=`<div class="summary-head"><div class="summary-icon">✨</div><div><div class="summary-title">Tugas Hari Ini</div><div class="summary-sub">${date} • DOC ${x.day} • Week ${x.week} • ${poolMode==="all"?"Semua Kolam":"Kolam "+poolMode}</div></div></div><div class="rec-list"><div class="rec-item feed-detail"><div class="ico">🐟</div><div style="width:100%"><b>Pakan • ${x.feedName}</b><small style="display:block;margin-top:4px">Rekomendasi Daily Management: <strong>${F(x.rec*poolFactor)} g</strong> • FR ${F(x.fr*100)}% • penyerapan 50% = ${F(x.rec*.5*poolFactor)} g.</small><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px"><div style="padding:10px;border-radius:12px;background:#eef7ff;text-align:center"><small>PAGI 08–09 • 30%</small><b style="display:block">${F(x.rec*.30*poolFactor)} g</b></div><div style="padding:10px;border-radius:12px;background:#f0fdf4;text-align:center"><small>SIANG 11–12 • 30%</small><b style="display:block">${F(x.rec*.30*poolFactor)} g</b></div><div style="padding:10px;border-radius:12px;background:#fff7ed;text-align:center"><small>SORE 15–16 • 40%</small><b style="display:block">${F(x.rec*.40*poolFactor)} g</b></div></div></div></div><div class="rec-item"><div class="ico">🧪</div><div style="width:100%"><div class="pond-app-head"><div class="pond-app-title"><span class="pond-app-icon">🧪</span><div><b>Aplikasi Kolam Hari Ini</b><small>Rekomendasi pekerjaan kolam berdasarkan jadwal budidaya</small></div></div><span class="pond-week-badge">Week ${appToday?appToday.week:x.week}</span></div>${appToday?`<div class="pond-detail-grid" style="grid-template-columns:1fr">
+<div class="pond-detail-box culture" style="text-align:center"><small>💧 Total Air Kultur</small><strong>${F(appToday.airCulture*poolFactor)} L</strong></div>
+</div><div class="air-culture-schedule">
+<div class="air-time-card morning"><small>APLIKASI 1</small><b>10.00 WIB</b><div class="air-dose">💧 ${F(appToday.airCulture/2*poolFactor)} L</div><span>Air Kultur</span>${showCarbon?`<div class="carbon-dose" style="margin-top:9px;padding-top:8px;border-top:1px dashed #cddfe9"><b style="display:block;color:#8a6200">🌾 ${S().carbonSource==='Molase'?'Molase':'Gula Pasir'}</b><strong style="display:block;margin-top:3px;color:#7a5700">${F(carbonToday/2*poolFactor)} g</strong></div>`:``}</div>
+<div class="air-time-card evening"><small>APLIKASI 2</small><b>17.00 WIB</b><div class="air-dose">💧 ${F(appToday.airCulture/2*poolFactor)} L</div><span>Air Kultur</span>${showCarbon?`<div class="carbon-dose" style="margin-top:9px;padding-top:8px;border-top:1px dashed #cddfe9"><b style="display:block;color:#8a6200">🌾 ${S().carbonSource==='Molase'?'Molase':'Gula Pasir'}</b><strong style="display:block;margin-top:3px;color:#7a5700">${F(carbonToday/2*poolFactor)} g</strong></div>`:``}</div>
+</div>`:(showCarbon?`<div class="air-culture-schedule">
+<div class="air-time-card morning"><small>APLIKASI 1</small><b>10.00 WIB</b><div class="carbon-dose" style="margin-top:9px"><b style="display:block;color:#8a6200">🌾 ${S().carbonSource==='Molase'?'Molase':'Gula Pasir'}</b><strong style="display:block;margin-top:5px;color:#7a5700;font-size:20px">${F(carbonToday/2*poolFactor)} g</strong></div></div>
+<div class="air-time-card evening"><small>APLIKASI 2</small><b>17.00 WIB</b><div class="carbon-dose" style="margin-top:9px"><b style="display:block;color:#8a6200">🌾 ${S().carbonSource==='Molase'?'Molase':'Gula Pasir'}</b><strong style="display:block;margin-top:5px;color:#7a5700;font-size:20px">${F(carbonToday/2*poolFactor)} g</strong></div></div>
+</div><small style="display:block;margin-top:9px;color:#6c8191">${x.day<20?'DOC 0–19: sumber karbon ditampilkan setiap hari.':'Setelah 20 hari: jadwal sumber karbon mingguan sampai panen.'}</small>`:`<small style="display:block;margin-top:4px">Tidak ada jadwal aplikasi kolam hari ini.</small>`)}</div></div><div class="rec-item"><div class="ico">🪣</div><div style="width:100%"><b>Pembuatan Kultur Ember • 07.00 WIB</b>${cultureTomorrow?`<small style="display:block;margin-top:4px">Project untuk aplikasi <strong>besok (${cultureTomorrow.date})</strong>: Air kultur <strong>${F(cultureTomorrow.airCulture*poolFactor)} L</strong> • Gula Pasir <strong>${F(cultureTomorrow.sugarCulture*poolFactor)} g</strong> • Aqua Enzym <strong>${F(cultureTomorrow.enz*poolFactor)} g</strong> • Nitrobacter <strong>${F(cultureTomorrow.nit*poolFactor)} g</strong>.</small><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px"><div style="padding:10px;border-radius:12px;background:#eef7ff;text-align:center"><small>AIR</small><b style="display:block">${F(cultureTomorrow.airCulture*poolFactor)} L</b></div><div style="padding:10px;border-radius:12px;background:#fff7ed;text-align:center"><small>GULA</small><b style="display:block">${F(cultureTomorrow.sugarCulture*poolFactor)} g</b></div><div style="padding:10px;border-radius:12px;background:#f0fdf4;text-align:center"><small>AQUA ENZYM</small><b style="display:block">${F(cultureTomorrow.enz*poolFactor)} g</b></div><div style="padding:10px;border-radius:12px;background:#faf5ff;text-align:center"><small>NITROBACTER</small><b style="display:block">${F(cultureTomorrow.nit*poolFactor)} g</b></div></div>`:`<small style="display:block;margin-top:4px">Tidak ada kultur untuk jadwal aplikasi besok.</small>`}</div></div><div class="rec-item"><div class="ico">📈</div><div><b>Monitoring</b><small>Populasi ${F(x.pop*poolFactor)} ekor • bobot ${F(x.weight)} g/ekor • biomassa ${F((x.biomass*poolFactor)/1000)} kg • konsumsi pakan s.d. hari ini ${F((usedFeed*poolFactor)/1000)} kg • kebutuhan pakan sisa ${F((futureFeed*poolFactor)/1000)} kg.</small></div></div></div>`}
+function saveActivity(){
+  if(!S().startDate)return;
+  const date=actDate.value;
+  const poolMode=ensureActivityPoolSelector();
+  const payload={
+    death:aDeath.value,
+    weight:aWeight.value,
+    feed:aFeed.value,
+    cn:aCn.value,
+    note:aNote.value
+  };
+  if(poolMode==='all'){
+    P().actual=P().actual||{};
+    P().actual[date]=payload;
+  }else{
+    P().poolActual=P().poolActual||{};
+    P().poolActual[date]=P().poolActual[date]||{};
+    P().poolActual[date][String(poolMode)]=payload;
+    syncAggregateActualFromPools(date);
+  }
+  save();
+  renderDaily();
+  renderDashboard();
+  renderCN();
+  renderFinance();
+  renderSummary();
+  renderActivity();
+  go('activity');
+}
+function renderCN(){let m=model();if(!m.length){cnRows.innerHTML='';return}cnRows.innerHTML=cnWeekRows(m).map(r=>`<tr><td><b>${r.apk}</b></td><td>${r.week}</td><td>${r.date}</td><td>${F(r.height)}</td><td>${F(r.totalAir)}</td><td>${F(r.feed)}</td><td>${F(r.airCulture)}</td><td>${F(r.sugarCulture)}</td><td>${F(r.sugarCN)}</td><td>${F(r.enz)}</td><td>${F(r.nit)}</td></tr>`).join('')}
+function actualStatus(m){
+  const actual=P().actual||{};
+  const dates=Object.keys(actual).filter(d=>actual[d]&&Object.values(actual[d]).some(v=>v!==''&&v!==undefined&&v!==null)).sort();
+  if(!dates.length)return {count:0,last:'',fcr:N(S().targetFcr)||0};
+  const last=dates[dates.length-1],idx=m.findIndex(r=>r.date===last);
+  return {count:dates.length,last,fcr:actualFCR(m,idx>=0?idx:m.length-1)};
+}
+function renderFinance(){
+const poolCtx=modulePoolContext('financePoolMode'),pf=poolCtx.factor;
+let m=model(),s=S();
+if(!m.length){finKpi.innerHTML='<div class="card">Project belum disimpan.</div>';finRows.innerHTML='';return}
+let last=m[m.length-1],fcrActualFinance=actualFCR(m);
+let feedBy=[1,2,3].map(ph=>m.filter(x=>phase(x.day)===ph).reduce((a,x)=>a+x.feed,0)*pf);
+let feedCostBy=feedBy.map((q,i)=>q*(N(s['feed'+(i+1)+'Price'])/(Math.max(N(s['feed'+(i+1)+'Qty']),1)*1000)));
+let feedCost=feedCostBy.reduce((a,x)=>a+x,0);
+let seed=N(m[0]?.pop||s.seedCount)*pf*N(s.seedPrice);
+let cnWeeks=(s.cultivationSystem==='Bioflok'?cnWeekRows(m):[]);
+let cnCarbonQty=(cnWeeks.reduce((a,x)=>a+N(x.sugarCulture)+N(x.sugarCN),0))*pf;
+let cnEnzymQty=(cnWeeks.reduce((a,x)=>a+N(x.enz),0))*pf;
+let cnNitroQty=(cnWeeks.reduce((a,x)=>a+N(x.nit),0))*pf;
+let cnCarbonCost=cnCarbonQty*(N(s.sugarPrice)/Math.max(N(s.sugarPack),1));
+let cnEnzymCost=cnEnzymQty*(N(s.enzymPrice)/Math.max(N(s.enzymPack),1));
+let cnNitroCost=cnNitroQty*(N(s.nitroPrice)/Math.max(N(s.nitroPack),1));
+let cnQty=cnCarbonQty+cnEnzymQty+cnNitroQty;
+let cnCost=cnCarbonCost+cnEnzymCost+cnNitroCost;
+let elecKwh=N(s.aeratorWatt)/1000*N(s.hours)*N(s.duration)*pf;
+let elec=elecKwh*N(s.tariff);
+let labor=(N(s.labor)*N(s.laborQty||1))*pf;
+let medicine=(N(s.medicine)*N(s.medicineQty||1))*pf;
+let transport=(N(s.transport)*N(s.transportQty||1))*pf;
+let depreciation=(N(s.depreciation)*N(s.depreciationQty||1))*pf;
+let misc=(N(s.misc)*N(s.miscQty||1))*pf;
+
+let variableCost=seed+feedCost+cnCost+elec+medicine+transport+misc;
+let fixedCost=labor+depreciation;
+let cashCost=variableCost+labor; // modal kerja kas: tidak memasukkan penyusutan non-kas
+let totalCost=variableCost+fixedCost;
+let harvestKg=last.biomass/1000*pf;
+let rev=harvestKg*N(s.sellPrice);
+let net=rev-totalCost;
+let margin=rev?net/rev*100:0;
+let roiCash=cashCost?net/cashCost*100:0;
+let rcRatio=totalCost?rev/totalCost:0;
+let hppKg=harvestKg?totalCost/harvestKg:0;
+let bepPrice=harvestKg?totalCost/harvestKg:0;
+let bepProduction=N(s.sellPrice)>0?totalCost/N(s.sellPrice):0;
+let contribution=rev-variableCost;
+let contributionMargin=rev?contribution/rev*100:0;
+let safetyKg=Math.max(0,harvestKg-bepProduction);
+let safetyPct=harvestKg?safetyKg/harvestKg*100:0;
+
+finKpi.innerHTML=`<div class="card" style="grid-column:1/-1"><b>Mode:</b> ${poolCtx.label}</div>`+[
+['Modal Kerja Siklus',Rp(cashCost),'orange'],
+['Total Biaya Akuntansi',Rp(totalCost),'red'],
+['Pendapatan Proyeksi',Rp(rev),'blue'],
+['Laba Bersih Proyeksi',Rp(net),net>=0?'green':'red'],
+['HPP / kg',Rp(hppKg),'cyan'],
+['Net Margin',F(margin)+'%',margin>=0?'purple':'red'],
+['R/C Ratio',F(rcRatio),rcRatio>=1?'green':'red'],
+['ROI Modal Kerja',F(roiCash)+'%',roiCash>=0?'green':'red']
+,['FCR Aktual',(actualFCR(m)!==null?FCRfmt(actualFCR(m)):'-'),'orange']].map(x=>`<div class="kpi ${x[2]}">${x[0]}<b>${x[1]}</b></div>`).join('');
+
+let rows=[
+['Biaya Variabel','Bibit Ikan',F(N(s.seedCount)*pf)+' ekor',Rp(s.seedPrice)+'/ekor',seed,'Kas'],
+['Biaya Variabel','Pakan Fase 1',F(feedBy[0]/1000)+' kg',s.feed1Name||'-',feedCostBy[0],'Kas'],
+['Biaya Variabel','Pakan Fase 2',F(feedBy[1]/1000)+' kg',s.feed2Name||'-',feedCostBy[1],'Kas'],
+['Biaya Variabel','Pakan Fase 3',F(feedBy[2]/1000)+' kg',s.feed3Name||'-',feedCostBy[2],'Kas'],
+['Biaya Variabel','Sumber Karbon — '+(s.carbonSource||'Gula Pasir'),s.cultivationSystem==='Bioflok'?F(cnCarbonQty)+' g':'0 g',s.cultivationSystem==='Bioflok'?(Rp(N(s.sugarPrice))+'/'+F(N(s.sugarPack))+' '+(s.sugarMeasure||'g')):'Tidak digunakan',cnCarbonCost,'Bahan C/N • Gula Kultur + Unsur C'],
+['Biaya Variabel','Aqua Enzym',s.cultivationSystem==='Bioflok'?F(cnEnzymQty)+' g':'0 g',s.cultivationSystem==='Bioflok'?(Rp(N(s.enzymPrice))+'/'+F(N(s.enzymPack))+' '+(s.enzymMeasure||'g')):'Tidak digunakan',cnEnzymCost,'Bahan C/N • Kultur'],
+['Biaya Variabel','Nitrobacter',s.cultivationSystem==='Bioflok'?F(cnNitroQty)+' g':'0 g',s.cultivationSystem==='Bioflok'?(Rp(N(s.nitroPrice))+'/'+F(N(s.nitroPack))+' '+(s.nitroMeasure||'g')):'Tidak digunakan',cnNitroCost,'Bahan C/N • Kultur'],
+['RINGKASAN','TOTAL BAHAN C/N',s.cultivationSystem==='Bioflok'?F(cnQty)+' g':'0 g',s.cultivationSystem==='Bioflok'?'Bioflok':'Tidak digunakan',cnCost,'Sumber Karbon + Aqua Enzym + Nitrobacter'],
+['Biaya Variabel','Listrik / Aerasi',F(elecKwh)+' kWh',Rp(s.tariff)+'/kWh',elec,'Kas'],
+['Biaya Variabel','Obat / Vitamin',F(s.medicineQty||1)+' '+(s.medicineUnit||''),Rp(s.medicine),medicine,'Kas'],
+['Biaya Variabel','Transportasi',F(s.transportQty||1)+' '+(s.transportUnit||''),Rp(s.transport),transport,'Kas'],
+['Biaya Variabel','Biaya Lain',F(s.miscQty||1)+' '+(s.miscUnit||''),Rp(s.misc),misc,'Kas'],
+['Biaya Tetap','Tenaga Kerja',F(s.laborQty||1)+' '+(s.laborUnit||''),Rp(s.labor),labor,'Kas'],
+['Biaya Tetap','Penyusutan Peralatan',F(s.depreciationQty||1)+' '+(s.depreciationUnit||''),Rp(s.depreciation),depreciation,'Non-kas'],
+['RINGKASAN','TOTAL BIAYA VARIABEL','','',variableCost,''],
+['RINGKASAN','TOTAL BIAYA TETAP','','',fixedCost,''],
+['RINGKASAN','MODAL KERJA / KEBUTUHAN KAS SIKLUS','','',cashCost,'Tidak termasuk penyusutan'],
+['RINGKASAN','TOTAL BIAYA AKUNTANSI','','',totalCost,'Termasuk penyusutan'],
+['HASIL','PENDAPATAN PROYEKSI',F(harvestKg)+' kg',Rp(s.sellPrice)+'/kg',rev,''],
+['HASIL','LABA BERSIH PROYEKSI','','',net,''],
+['ANALISIS','HPP / BIAYA PRODUKSI PER KG',F(harvestKg)+' kg','',hppKg,'Rp/kg'],
+['ANALISIS','BEP HARGA JUAL',F(harvestKg)+' kg','',bepPrice,'Rp/kg'],
+['ANALISIS','BEP PRODUKSI',F(bepProduction)+' kg',Rp(s.sellPrice)+'/kg',0,'Minimal kg terjual'],
+['ANALISIS','CONTRIBUTION MARGIN','','',contribution,'Margin kontribusi '+F(contributionMargin)+'%'],
+['ANALISIS','MARGIN OF SAFETY',F(safetyKg)+' kg','',0,F(safetyPct)+'% di atas BEP']
+];
+
+finRows.innerHTML=rows.map(r=>{
+  let display=(r[0]==='ANALISIS' && (r[1]==='BEP PRODUKSI'||r[1]==='MARGIN OF SAFETY')) ? '-' : Rp(r[4]);
+  return `<tr><td><b>${r[1]}</b><br><small>${r[0]}</small></td><td>${r[2]}</td><td>${r[3]}</td><td class="${r[4]<0?'neg':''}">${display}</td><td>${r[5]}</td></tr>`;
+}).join('');
+
+finRows.innerHTML += `<tr><td colspan="5" style="text-align:left;background:#f5f9fc;color:#496779">
+<b>Catatan akuntansi:</b> Modal Kerja Siklus = kebutuhan kas untuk menjalankan satu siklus dan tidak memasukkan penyusutan karena penyusutan adalah biaya non-kas. 
+Total Biaya Akuntansi = seluruh biaya produksi termasuk penyusutan. HPP/kg = Total Biaya Akuntansi ÷ proyeksi biomassa panen. 
+BEP Harga = harga minimum/kg agar total biaya tertutup. BEP Produksi = minimal kg yang harus terjual pada harga jual yang dimasukkan. 
+R/C Ratio = Pendapatan ÷ Total Biaya; angka 1 berarti impas.
+</td></tr>`;
+}
+function renderSummary(){
+const poolCtx=modulePoolContext('summaryPoolMode'),pf=poolCtx.factor;
+let m=model(),s=S();if(!m.length){summaryBody.innerHTML='<div class="card">Project belum disimpan.</div>';return}
+let first=m[0],last=m[m.length-1],feed=totalFeedActual(m)/1000*pf,deaths=m.reduce((a,x)=>a+x.death,0)*pf,sr=first.pop?last.pop/first.pop*100:0,adg=(last.weight-first.weight)/Math.max(last.day,1),actualCount=Object.keys(P().actual||{}).length;
+let fcrActualSummary=actualFCR(m);
+let feedBy=[1,2,3].map(ph=>m.filter(x=>phase(x.day)===ph).reduce((a,x)=>a+x.feed,0)*pf);
+let feedCostBy=feedBy.map((q,i)=>q*(N(s['feed'+(i+1)+'Price'])/(Math.max(N(s['feed'+(i+1)+'Qty']),1)*1000)));
+let feedCost=feedCostBy.reduce((a,x)=>a+x,0),seed=N(s.seedCount)*pf*N(s.seedPrice),cnQty=(s.cultivationSystem==='Bioflok'?m.reduce((a,x)=>a+N(x.C),0)*pf:0),cnCost=cnQty*(N(s.sugarPrice)/Math.max(N(s.sugarPack),1));
+let elecKwh=N(s.aeratorWatt)/1000*N(s.hours)*N(s.duration)*pf,elec=elecKwh*N(s.tariff);
+let labor=(N(s.labor)*N(s.laborQty||1))*pf,medicine=(N(s.medicine)*N(s.medicineQty||1))*pf,transport=(N(s.transport)*N(s.transportQty||1))*pf,depreciation=(N(s.depreciation)*N(s.depreciationQty||1))*pf,misc=(N(s.misc)*N(s.miscQty||1))*pf;
+let direct=seed+feedCost+cnCost,opex=elec+labor+medicine+transport+depreciation+misc,totalCost=direct+opex,harvestKg=last.biomass/1000*pf,rev=harvestKg*N(s.sellPrice),gross=rev-direct,net=gross-opex,margin=rev?net/rev*100:0,grossMargin=rev?gross/rev*100:0,bepKg=harvestKg?totalCost/harvestKg:0,costKg=harvestKg?totalCost/harvestKg:0,roi=totalCost?net/totalCost*100:0,seedPct=totalCost?seed/totalCost*100:0,feedPct=totalCost?feedCost/totalCost*100:0,cnPct=totalCost?cnCost/totalCost*100:0,opexPct=totalCost?opex/totalCost*100:0;
+let costRows=[
+['HPP','Bibit Ikan',F(s.seedCount)+' ekor',Rp(s.seedPrice)+'/ekor',seed],
+['HPP','Pakan Fase 1',F(feedBy[0]/1000)+' kg',s.feed1Name||'-',feedCostBy[0]],
+['HPP','Pakan Fase 2',F(feedBy[1]/1000)+' kg',s.feed2Name||'-',feedCostBy[1]],
+['HPP','Pakan Fase 3',F(feedBy[2]/1000)+' kg',s.feed3Name||'-',feedCostBy[2]],
+['HPP','Bahan C/N',F(cnQty/1000)+' kg','Sesuai pemakaian',cnCost],
+['OPEX','Listrik',F(elecKwh)+' kWh',Rp(s.tariff)+'/kWh',elec],
+['OPEX','Tenaga Kerja',F(s.laborQty||1)+' '+(s.laborUnit||''),Rp(s.labor),labor],
+['OPEX','Obat / Vitamin',F(s.medicineQty||1)+' '+(s.medicineUnit||''),Rp(s.medicine),medicine],
+['OPEX','Transportasi',F(s.transportQty||1)+' '+(s.transportUnit||''),Rp(s.transport),transport],
+['OPEX','Penyusutan',F(s.depreciationQty||1)+' '+(s.depreciationUnit||''),Rp(s.depreciation),depreciation],
+['OPEX','Biaya Lain',F(s.miscQty||1)+' '+(s.miscUnit||''),Rp(s.misc),misc]
+];
+summaryBody.innerHTML=`<div class="report-cover"><p>${(getFarmSettings().farmName||'Tiara Fishery').toUpperCase()}</p><h1>Laporan Akhir Budidaya</h1><p>${P().name} • ${poolCtx.label} • ${s.fishType||'Ikan'} • ${s.startDate} s/d ${last.date}</p></div>
+<div class="grid g4 report-section">${[['Populasi Akhir',F(last.pop*pf)+' ekor','blue'],['Bobot Akhir',F(last.weight)+' g','green'],['ADG',F(adg)+' g/hari','green'],['FCR Aktual',(fcrActualSummary!==null?FCRfmt(fcrActualSummary):'-'),'orange'],['Target FCR',F(N(s.targetFcr)||1.3),'orange'],['SR',F(sr)+'%','red'],['Biomassa Panen',F(harvestKg)+' kg','purple'],['Total Pakan Actual',Number(feed).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:3})+' kg','cyan']].map(x=>`<div class="kpi ${x[2]}">${x[0]}<b>${x[1]}</b></div>`).join('')}</div>
+<div class="grid g2 report-section"><div class="card"><h3>📋 Identitas & Project</h3><div class="summary-grid"><div class="mini-stat"><small>Jenis Kolam</small><b>${s.poolType||'-'}</b></div><div class="mini-stat"><small>Volume</small><b>${F(s.volume*pf)} m³</b></div><div class="mini-stat"><small>Padat Tebar</small><b>${F(s.density)} ekor/m³</b></div><div class="mini-stat"><small>Bibit Awal</small><b>${F(N(s.seedCount)*pf)} ekor @ ${F(s.seedWeight)} g</b></div><div class="mini-stat"><small>Lama Budidaya</small><b>${s.duration} hari</b></div><div class="mini-stat"><small>Target FCR</small><b>${s.targetFcr||'-'}</b></div><div class="mini-stat"><small>FCR Aktual</small><b>${(fcrActualSummary!==null?FCRfmt(fcrActualSummary):'-')}</b></div></div></div><div class="report-photo"></div></div>
+<div class="grid g2 report-section"><div class="card"><h3>🌾 Pakan per Fase</h3><p>Fase 1: <b>${s.feed1Name||'-'}</b> • Protein ${s.feed1Protein||'-'}% • ${F(feedBy[0]/1000)} kg</p><p>Fase 2: <b>${s.feed2Name||'-'}</b> • Protein ${s.feed2Protein||'-'}% • ${F(feedBy[1]/1000)} kg</p><p>Fase 3: <b>${s.feed3Name||'-'}</b> • Protein ${s.feed3Protein||'-'}% • ${F(feedBy[2]/1000)} kg</p><p>Total konsumsi logic/actual: <b>${F(feed)} kg</b></p></div><div class="card"><h3>🧪 C/N & Operasional</h3><p>Aplikasi C/N dirangkum <b>per week</b> sesuai sheet Aplikasi CN.</p><p>Total kebutuhan unsur C: <b>${F(cnQty/1000)} kg</b></p><p>Energi listrik: <b>${F(elecKwh)} kWh</b> • ${Rp(elec)}</p><p>Total kematian: <b>${F(deaths)} ekor</b></p></div></div>
+<div class="card report-section finance-report"><h3>💰 Finance</h3><div class="finance-kpi-grid"><div class="finance-kpi"><small>Total Pendapatan</small><b>${Rp(rev)}</b></div><div class="finance-kpi warn"><small>Total HPP</small><b>${Rp(direct)}</b></div><div class="finance-kpi warn"><small>Total OPEX</small><b>${Rp(opex)}</b></div><div class="finance-kpi"><small>Total Biaya</small><b>${Rp(totalCost)}</b></div><div class="finance-kpi good"><small>Laba Kotor</small><b>${Rp(gross)}</b></div><div class="finance-kpi good"><small>Laba Bersih</small><b>${Rp(net)}</b></div><div class="finance-kpi purple"><small>Net Margin</small><b>${F(margin)}%</b></div><div class="finance-kpi purple"><small>ROI / Siklus</small><b>${F(roi)}%</b></div></div>
+<div class="table" style="max-height:none"><table class="report-fin-table"><thead><tr><th>Kelompok</th><th>Komponen</th><th>Qty/Pemakaian</th><th>Basis</th><th style="text-align:right">Nilai</th></tr></thead><tbody>${costRows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td class="num">${Rp(r[4])}</td></tr>`).join('')}<tr class="total"><td colspan="4">TOTAL HPP / BIAYA LANGSUNG</td><td class="num">${Rp(direct)}</td></tr><tr class="total"><td colspan="4">TOTAL OPEX / BIAYA OPERASIONAL</td><td class="num">${Rp(opex)}</td></tr><tr class="total"><td colspan="4">TOTAL BIAYA SIKLUS</td><td class="num">${Rp(totalCost)}</td></tr><tr class="profit"><td colspan="4">LABA BERSIH</td><td class="num">${Rp(net)}</td></tr></tbody></table></div>
+<div class="finance-kpi-grid"><div class="finance-kpi"><small>Harga Jual</small><b>${Rp(s.sellPrice)}/kg</b></div><div class="finance-kpi"><small>BEP Harga</small><b>${Rp(bepKg)}/kg</b></div><div class="finance-kpi"><small>Biaya Produksi</small><b>${Rp(costKg)}/kg</b></div><div class="finance-kpi good"><small>Gross Margin</small><b>${F(grossMargin)}%</b></div></div>
+<div class="card" style="box-shadow:none;background:#f8fbfd;margin-top:10px"><h3 style="font-size:14px">Struktur Biaya</h3><div class="summary-grid"><div class="mini-stat"><small>Bibit</small><b>${F(seedPct)}%</b><em>${Rp(seed)}</em></div><div class="mini-stat"><small>Pakan</small><b>${F(feedPct)}%</b><em>${Rp(feedCost)}</em></div><div class="mini-stat"><small>C/N</small><b>${F(cnPct)}%</b><em>${Rp(cnCost)}</em></div><div class="mini-stat"><small>OPEX</small><b>${F(opexPct)}%</b><em>${Rp(opex)}</em></div></div></div>
+<div class="finance-note"></div></div>`
+
+summaryBody.innerHTML += weightChartHTML(m,'Perkembangan Berat / Ekor — Setiap 10 Hari');
+}
+function printSummary(){
+  renderSummary();
+  const prev=document.querySelector('.page.active')?.id||'dashboard';
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.getElementById('summary').classList.add('active');
+  setTimeout(()=>{window.print();setTimeout(()=>go(prev),150)},80);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const b=document.getElementById('addProjectBtn');
+  if(b)b.addEventListener('click',newProject);
+});
+
+// === SOP PROJECT: BIOFLOK vs KONVENSIONAL (berdasarkan PDF SOP Tiara Fishery) ===
+const SOP_PROJECT={
+'Nila':{system:'Bioflok',duration:140,durationRange:'120–150 hari',adg:'2,3 g/hari',density:100,densityUnit:'ekor/m³',fcr:1.1,fcrRange:'1,0–1,2',seedWeight:10,targetHarvestWeight:330,sr:'≥90%',control:'Aerasi kontinu, kualitas air, biomassa, feeding rate, FCR aktual, ADG aktual dan kestabilan flok.'},
+'Lele':{system:'Bioflok',duration:90,durationRange:'75–100 hari',adg:'1,8 g/hari',density:250,densityUnit:'ekor/m³',fcr:1.0,fcrRange:'0,8–1,1',seedWeight:8,targetHarvestWeight:145,sr:'≥85%',control:'Grading, aerasi, biomassa aktual, nafsu makan, mortalitas, kualitas air dan FCR.'},
+'Bawal':{system:'Konvensional / Semi-intensif',duration:150,durationRange:'120–180 hari',adg:'3,0 g/hari',density:15,densityUnit:'ekor/m²',fcr:1.35,fcrRange:'1,2–1,5',seedWeight:15,targetHarvestWeight:600,sr:'-',control:'Pertumbuhan bobot, biomassa, konsumsi pakan, FCR, SR dan kualitas air.'},
+'Gurame':{system:'Konvensional',duration:300,durationRange:'240–360 hari',adg:'2,0 g/hari',density:7,densityUnit:'ekor/m²',fcr:1.6,fcrRange:'1,4–1,8',seedWeight:75,targetHarvestWeight:700,sr:'≥85%',control:'Pertumbuhan relatif lambat; gunakan kurva khusus gurame, kualitas air, biomassa, pakan dan SR.'},
+'Mas':{system:'Konvensional / Semi-intensif',duration:120,durationRange:'90–150 hari',adg:'3,0 g/hari',density:15,densityUnit:'ekor/m²',fcr:1.35,fcrRange:'1,2–1,5',seedWeight:35,targetHarvestWeight:400,sr:'≥85%',control:'Sampling bobot berkala, biomassa, feeding rate, FCR aktual, mortalitas dan kualitas air.'},
+'Koi':{system:'Konvensional + Filtrasi',duration:270,durationRange:'180–365 hari',adg:'1,5 g/hari*',density:7,densityUnit:'ekor/m³',fcr:1.5,fcrRange:'1,3–1,8*',seedWeight:20,targetHarvestWeight:300,sr:'-',control:'KPI utama: panjang, body conformation, warna/pattern, SR dan kualitas air. Aerasi dan filtrasi mekanis-biologis.'},
+'Nilem':{system:'Konvensional / Semi-intensif',duration:150,durationRange:'120–180 hari',adg:'1,5 g/hari',density:15,densityUnit:'ekor/m²',fcr:1.5,fcrRange:'1,3–1,7',seedWeight:8,targetHarvestWeight:200,sr:'≥85%',control:'Sampling pertumbuhan, biomassa, kebutuhan pakan, FCR, SR dan kualitas air.'}
+};
+function systemIsBioflok(){return (S().cultivationSystem||$('cultivationSystem')?.value||'Bioflok')==='Bioflok'}
+function getFeedProteinProfile(){
+  let vals=[]; for(let i=1;i<=3;i++){let p=N($('feed'+i+'Protein')?.value),q=N($('feed'+i+'Qty')?.value);if(p>0)vals.push({p,q:q>0?q:1});}
+  if(!vals.length)return {avg:0,label:'Belum diisi'};
+  let total=vals.reduce((a,x)=>a+x.q,0),avg=vals.reduce((a,x)=>a+x.p*x.q,0)/total;
+  return {avg,label:F(avg)+'%'};
+}
+function proteinAdjustedFcr(d){
+  let fp=getFeedProteinProfile(); if(!fp.avg)return {fcr:d.fcr,note:'Protein pakan belum diisi — menggunakan titik tengah FCR SOP.'};
+  // Koreksi operasional aplikasi: protein 28% = baseline. Hasil selalu dibatasi dalam rentang FCR SOP ikan.
+  let parts=d.fcrRange.replace(/\*/g,'').replace(/,/g,'.').match(/[0-9.]+/g)||[];
+  let lo=N(parts[0])||d.fcr, hi=N(parts[1])||d.fcr;
+  let est=d.fcr*(28/fp.avg); est=clamp(est,lo,hi);
+  return {fcr:Math.round(est*100)/100,note:`Rata-rata protein tertimbang ${F(fp.avg)}%. Estimasi FCR dikoreksi dari protein pakan dan tetap dibatasi rentang SOP ${d.fcrRange}. Saat Terapkan SOP, Target Bobot Panen, Lama Budidaya, dan Target FCR ikut menyesuaikan Bobot Awal aktual.`};
+}
+function renderSopProjectCard(){let fish=$('fishType')?.value||S().fishType||'',box=$('sopProjectCard');if(!box)return;if(!fish||!SOP_PROJECT[fish]){box.innerHTML=`<div class="subhead">📘 Terapkan SOP</div><div class="hint">Isi data manual terlebih dahulu, terutama <b>Jenis Ikan, Bobot Awal, Target Bobot Panen</b>, ukuran kolam dan pakan. Setelah itu klik Terapkan SOP. <b>Lama Budidaya, Padat Tebar dan Target FCR</b> akan dihitung otomatis.</div>`;return;}let d=SOP_PROJECT[fish],sys=$('cultivationSystem')?.value||'',ok=sys===d.system,fx=proteinAdjustedFcr(d);let applied=N($('duration')?.value)>0&&N($('density')?.value)>0&&N($('targetFcr')?.value)>0;box.innerHTML=`<div class="subhead">📘 SOP ${fish} — ${d.system}</div><p class="note"><b>Baseline SOP:</b> Lama ${d.durationRange} • ADG ${d.adg} • Padat Tebar ${d.density} ${d.densityUnit} • FCR ${d.fcrRange}</p>${applied?`<div class="grid g3" style="margin-top:12px"><div class="mini-stat"><small>Lama Budidaya Otomatis</small><b>${F($('duration').value)} hari</b></div><div class="mini-stat"><small>Padat Tebar Otomatis</small><b>${F($('density').value)} ${d.densityUnit}</b></div><div class="mini-stat"><small>Target FCR Otomatis</small><b>${F($('targetFcr').value)}</b></div></div>`:''}<p class="note" style="margin-top:10px">Lama budidaya dihitung langsung: (Target Bobot Panen − Bobot Awal) ÷ ADG SOP, tanpa dipaksa ke minimum lama baseline. Saat <b>Terapkan SOP</b> ditekan, Target FCR otomatis terisi sesuai master SOP jenis ikan. Nilai <b>Target FCR</b> tersebut dapat langsung diedit pada kolom FCR di bagian parameter SOP sebelum project disimpan. Setelah project berjalan, FCR Aktual dihitung terpisah dari pakan aktual dan pertambahan biomassa aktual.</p>${ok?'':`<div class="hint"><b>Perhatian:</b> SOP ${fish} menggunakan <b>${d.system}</b>. Terapkan SOP akan menyesuaikan sistem.</div>`}<button type="button" class="btn g" style="margin-top:10px" onclick="applySopPreset()">Terapkan SOP ${fish}</button>`;}
+// Sumber karbon C/N: Gula Pasir dan Molase disatukan menjadi satu pilihan.
+function applyCarbonSource(keepManual=false){
+  const src=$('carbonSource')?.value||'Gula Pasir';
+  const d=src==='Molase'?{price:50000,pack:5000}:{price:18000,pack:1000};
+  if(!keepManual){if($('sugarPrice'))$('sugarPrice').value=d.price;if($('sugarPack'))$('sugarPack').value=d.pack;if($('sugarMeasure'))$('sugarMeasure').value='g';}
+  if($('sugarUnit'))$('sugarUnit').textContent=F(N($('sugarPrice')?.value)/Math.max(N($('sugarPack')?.value),1));
+}
+// AUTO C/N + LISTRIK/PERALATAN (tetap editable)
+function projectPoolMetrics(){
+  let type=$('poolType')?.value||'Kolam Bundar', c=Math.max(1,N($('poolCount')?.value)), h=N($('height')?.value);
+  let area=type==='Kolam Bundar'?Math.PI*Math.pow(N($('diameter')?.value)/2,2)*c:N($('length')?.value)*N($('width')?.value)*c;
+  return {area,volume:area*h};
+}
+function applyAutoCnElectric(){
+  let sys=$('cultivationSystem')?.value||'', m=projectPoolMetrics(), bio=sys==='Bioflok';
+  // C/N: bahan standar disiapkan otomatis untuk Bioflok. Harga tetap dibiarkan sebagai input aktual pengguna.
+  if(bio){
+    if($('enzymName'))$('enzymName').value='Aqua Enzym'; if($('enzymPrice'))$('enzymPrice').value=70000; if($('enzymPack'))$('enzymPack').value=500;
+    if($('nitroName'))$('nitroName').value='Nitrobacter'; if($('nitroPrice'))$('nitroPrice').value=30000; if($('nitroPack'))$('nitroPack').value=100;
+    if($('enzymDoseEarly'))$('enzymDoseEarly').value=2;
+    if($('enzymDoseLate'))$('enzymDoseLate').value=.5;
+    if($('nitroDoseEarly'))$('nitroDoseEarly').value=0;
+    if($('nitroDoseLate'))$('nitroDoseLate').value=.5;
+    if($('sugarPrice'))$('sugarPrice').value=18000; if($('sugarPack'))$('sugarPack').value=1000;
+    if($('enzymMeasure')&&!$('enzymMeasure').value)$('enzymMeasure').value='g';
+    if($('nitroMeasure')&&!$('nitroMeasure').value)$('nitroMeasure').value='g';
+    if($('sugarMeasure')&&!$('sugarMeasure').value)$('sugarMeasure').value='g';
+  }
+  // Rekomendasi operasional aplikasi untuk daya. Setelah terisi, semua field tetap dapat diedit manual.
+  let wattPerM3 = bio ? 15 : (sys==='Konvensional + Filtrasi' ? 10 : 5);
+  if($('aeratorWatt'))$('aeratorWatt').value=Math.max(0,Math.ceil(m.volume*wattPerM3/10)*10);
+  if($('hours'))$('hours').value=(bio||sys==='Konvensional + Filtrasi')?24:12;
+  if($('tariff')&&!N($('tariff').value))$('tariff').value=1444;
+  calcCapacity();
+}
+
+function applySopPreset(){let fish=$('fishType')?.value||'',d=SOP_PROJECT[fish];if(!d){alert('Pilih Jenis Ikan terlebih dahulu.');return;}let required=[['projectName','Nama Project'],['poolCount','Jumlah Kolam'],['height','Tinggi Air'],['seedWeight','Bobot Awal'],['targetHarvestWeight','Target Bobot Panen']];let type=$('poolType')?.value;if(type==='Kolam Bundar')required.push(['diameter','Diameter Kolam']);else required.push(['length','Panjang Kolam'],['width','Lebar Kolam']);for(let [id,label] of required){if(!String($(id)?.value||'').trim()){alert('Isi '+label+' terlebih dahulu sebelum Terapkan SOP.');$(id)?.focus();return;}}let fp=getFeedProteinProfile();if(!fp.avg){alert('Isi Protein % pada minimal satu fase pakan terlebih dahulu.');$('feed1Protein')?.focus();return;}let fx=proteinAdjustedFcr(d);$('cultivationSystem').value=d.system;$('density').value=d.density;$('targetFcr').value=fx.fcr;/* Bobot awal tetap mengikuti input aktual pengguna. Jika kosong, gunakan baseline SOP. */if(!N($('seedWeight').value))$('seedWeight').value=d.seedWeight;/* Target bobot panen, lama budidaya, dan target FCR diturunkan dari bobot awal aktual. Bobot awal tidak ditimpa. */let adgNums=(d.adg.replace(/,/g,'.').match(/[0-9.]+/g)||[]).map(Number),adgMid=adgNums.length>1?(adgNums[0]+adgNums[1])/2:(adgNums[0]||1),durNums=(d.durationRange.match(/[0-9]+/g)||[]).map(Number),durMin=durNums[0]||1,durMax=durNums[1]||9999,sw=N($('seedWeight').value)||d.seedWeight;/* Pertahankan target SOP sebagai sasaran biologis, tetapi bila bobot awal sudah mendekati/melewati target baseline, proyeksikan target berdasarkan sisa siklus minimum SOP. */let tw=N($('targetHarvestWeight').value)||d.targetHarvestWeight;if(tw<=sw){alert('Target Bobot Panen harus lebih besar dari Bobot Awal.');$('targetHarvestWeight').focus();return;}let calcDur=Math.ceil(Math.max(0,tw-sw)/adgMid);$('duration').value=Math.max(1,calcDur);/* FCR dasar dikoreksi protein, lalu sedikit disesuaikan terhadap posisi bobot awal dalam siklus; tetap dibatasi rentang SOP. */let fcrNums=(d.fcrRange.replace(/,/g,'.').match(/[0-9.]+/g)||[]).map(Number),fcrMin=fcrNums[0]||fx.fcr,fcrMax=fcrNums[1]||fx.fcr,baselineSW=d.seedWeight||sw,progress=clamp((sw-baselineSW)/Math.max(1,tw-baselineSW),0,1),weightAdj=1+(progress*0.08);$('targetFcr').value=Math.round(clamp(fx.fcr*weightAdj,fcrMin,fcrMax)*100)/100;applyAutoCnElectric();calcCapacity();renderSopProjectCard();updateSystemUI();}
+function updateSystemUI(){let sys=$('cultivationSystem')?.value||S().cultivationSystem||'Bioflok',bio=sys==='Bioflok';let densityLabel=$('density')?.closest('.field')?.querySelector('label');if(densityLabel)densityLabel.textContent=`Padat Tebar (${(sys==='Bioflok'||sys==='Konvensional + Filtrasi')?'ekor/m³':'ekor/m²'})`;let cnDetails=$('cnInputs')?.closest('details');if(cnDetails)cnDetails.style.display=bio?'':'none';let cnNav=document.querySelector('.nav button[data-p="cn"]');if(cnNav)cnNav.style.display=bio?'':'none';renderSopProjectCard();}
+const _renderSetupFieldsSOP=renderSetupFields;renderSetupFields=function(){_renderSetupFieldsSOP();setTimeout(()=>{let f=$('fishType'),cs=$('cultivationSystem');if(f)f.addEventListener('change',()=>{renderSopProjectCard();});if(cs)cs.addEventListener('change',()=>{updateSystemUI();calcCapacity()});[1,2,3].forEach(i=>{['Protein','Qty'].forEach(k=>$('feed'+i+k)?.addEventListener('input',renderSopProjectCard))});updateSystemUI();renderSopProjectCard();},0)};
+const _loadSetupSOP=loadSetup;loadSetup=function(){_loadSetupSOP();updateSystemUI();renderSopProjectCard();};
+const _renderCNSOP=renderCN;renderCN=function(){if(!systemIsBioflok()){cnRows.innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px"><b>C/N tidak digunakan pada SOP sistem konvensional.</b><br><span class="note">Modul C/N aktif hanya untuk project Bioflok.</span></td></tr>';return}_renderCNSOP();};
+const _renderActivitySOP=renderActivity;renderActivity=function(){_renderActivitySOP();if(!systemIsBioflok()&&$('actRec')){[...$('actRec').querySelectorAll('.rec-item')].forEach(el=>{let t=el.textContent||'';if(t.includes('Aplikasi Kolam')||t.includes('Pembuatan Kultur'))el.remove()});}};
+const _renderDashboardSOP=renderDashboard;renderDashboard=function(){_renderDashboardSOP();let s=S();if($('projectHero')&&s.startDate)$('projectHero').innerHTML=$('projectHero').innerHTML.replace(`${s.fishType||'Ikan'} •`,`${s.fishType||'Ikan'} • ${s.cultivationSystem||'Bioflok'} •`);};
+
+
+// === FINAL INTEGRATION: SOP sistem per jenis ikan & Konvensional tanpa C/N ===
+function isBioflokSystem(s=S()){return (s.cultivationSystem||$('cultivationSystem')?.value||'')==='Bioflok'}
+function syncSystemModules(){
+  const bio=isBioflokSystem();
+  const cnNav=document.querySelector('.nav button[data-p="cn"]');
+  if(cnNav) cnNav.style.display=bio?'':'none';
+  const cnDetail=$('cnInputs')?.closest('details');
+  if(cnDetail) cnDetail.style.display=bio?'':'none';
+  // Jika project konvensional sedang berada di halaman C/N, arahkan ke Daily Management.
+  if(!bio && document.querySelector('#cn.page.active')) go('daily');
+}
+const __goSystemAware=go;
+go=function(id){
+  if(id==='cn' && !isBioflokSystem()){ id='daily'; }
+  __goSystemAware(id); syncSystemModules();
+};
+const __saveSetupSystemAware=saveSetup;
+saveSetup=function(){
+  const fish=$('fishType')?.value||'';
+  const sop=SOP_PROJECT[fish];
+  if(sop && $('cultivationSystem')) $('cultivationSystem').value=sop.system;
+  __saveSetupSystemAware();
+  syncSystemModules();
+};
+const __renderFinanceSystemAware=renderFinance;
+renderFinance=function(){
+  __renderFinanceSystemAware();
+  if(!isBioflokSystem() && $('finRows')){
+    [...$('finRows').querySelectorAll('tr')].forEach(tr=>{
+      if((tr.cells[0]?.textContent||'').trim()==='Bahan C/N') tr.remove();
+    });
+  }
+};
+const __renderSummarySystemAware=renderSummary;
+renderSummary=function(){
+  __renderSummarySystemAware();
+  if(!isBioflokSystem() && $('summaryBody')){
+    $('summaryBody').innerHTML=$('summaryBody').innerHTML
+      .replace(/<p>Aplikasi C\/N[\s\S]*?<\/p>/g,'<p><b>Sistem Konvensional:</b> C/N Ratio tidak digunakan.</p>')
+      .replace(/<div class="mini-stat"><small>C\/N<\/small>[\s\S]*?<\/div>/g,'');
+  }
+};
+window.addEventListener('load',syncSystemModules);
+
+
+const __loadSetupCarbon=loadSetup;
+loadSetup=function(){
+  __loadSetupCarbon();
+  const saved=S();
+  if($('carbonSource')) $('carbonSource').value=saved.carbonSource||'Gula Pasir';
+  applyCarbonSource(true);
+};
+['sugarPrice','sugarPack'].forEach(id=>document.addEventListener('input',e=>{if(e.target?.id===id)applyCarbonSource(true)}));
+
+// === DAILY ACTIVITY BIOFLOK: mengikuti logic sheet Daily_Activity D2 - Aziz nila ===
+// Bibis Kultur = rekomendasi pakan x 15%.
+// Aplikasi sumber karbon mengikuti kebutuhan C/N pada tanggal aktif.
+// Nama sumber karbon mengikuti pilihan Project: Gula Pasir atau Molase.
+const __renderActivityDailySheet=renderActivity;
+renderActivity=function(){
+  __renderActivityDailySheet();
+  if(!systemIsBioflok() || !$('actRec')) return;
+  const m=model(), date=actDate.value||today(), x=m.find(r=>r.date===date);
+  if(!x) return;
+  const source=S().carbonSource||$('carbonSource')?.value||'Gula Pasir';
+  const bibis=N(x.rec)*0.15;
+  const carbonToday=N(x.needC);
+  const cn=cnWeekRows(m), appToday=cn.find(r=>r.date===date&&r.apk==='Apk'), cultureTomorrow=cn.find(r=>r.date===add(date,1));
+  const list=$('actRec').querySelector('.rec-list');
+  if(!list) return;
+
+  // Tambahkan Bibis Kultur tepat setelah kartu Pakan.
+  const feedCard=list.querySelector('.feed-detail');
+  if(feedCard && !list.querySelector('[data-bibis-kultur]')){
+    const el=document.createElement('div');
+    el.className='rec-item'; el.setAttribute('data-bibis-kultur','1');
+    el.innerHTML=`<div class="ico">💧</div><div style="width:100%"><b>Bibis Pakan dengan Kultur</b><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:9px"><div style="padding:9px 11px;border-radius:11px;background:#f3f9fd;border:1px solid #deedf6"><small style="display:block;color:#71869a">Pakan Hari Ini</small><strong style="display:block;margin-top:2px;color:#0c4f84;font-size:15px">${F(x.rec)} g</strong></div><div style="padding:9px 11px;border-radius:11px;background:#eefbf5;border:1px solid #d8f0e3"><small style="display:block;color:#71869a">Bibis Kultur · 15%</small><strong style="display:block;margin-top:2px;color:#168553;font-size:15px">${F(bibis)} g</strong></div></div></div>`;
+    feedCard.insertAdjacentElement('afterend',el);
+  }
+
+  // Ganti istilah Gula menjadi sumber karbon yang dipilih dan gunakan kebutuhan C/N tanggal aktif.
+  [...list.querySelectorAll('.rec-item')].forEach(el=>{
+    let html=el.innerHTML;
+    if((el.textContent||'').includes('Aplikasi Kolam')){
+      html=html.replace(/Gula C\/N <strong>[\s\S]*?<\/strong>/,`${source} C/N <strong>${F(carbonToday)} g</strong>`)
+               .replace(/Gula kultur/g,`${source} kultur`);
+      el.innerHTML=html;
+    }
+    if((el.textContent||'').includes('Pembuatan Kultur Ember')){
+      html=html.replace(/Gula Pasir/g,source).replace(/>GULA</g,`>${source.toUpperCase()}<`);
+      el.innerHTML=html;
+    }
+  });
+};
+
+// Pastikan pilihan sumber karbon ikut tersimpan di Project.
+const __saveSetupCarbonSource=saveSetup;
+saveSetup=function(){
+  __saveSetupCarbonSource();
+  if(db.active && db.projects[db.active]){
+    db.projects[db.active].setup=db.projects[db.active].setup||{};
+    db.projects[db.active].setup.carbonSource=$('carbonSource')?.value||'Gula Pasir';
+    save();
+  }
+};
+
+(function bootstrapAuth(){let sess=JSON.parse(localStorage.getItem('tiaraSession')||'null'),a=accounts();if(sess?.email&&a[sess.email]){currentUser={email:sess.email,name:a[sess.email].name};startUserApp();}else{authGate.classList.remove('hidden');appRoot.style.display='none';setAuthMode('signin')}})();
+</script>
+<script>
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('launchScreen')?.classList.add('hide'),900)});setTimeout(()=>document.getElementById('launchScreen')?.classList.add('hide'),3500);
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.error)); }
+
+
+// === MASTER TERAPKAN SOP FINAL: satu tombol menggerakkan seluruh project & modul ===
+function masterSopAdg(d){
+  const m=String(d.adg||'').replace(/,/g,'.').match(/[0-9.]+/);
+  return m?Number(m[0]):0;
+}
+function applySopPreset(){
+  const fish=$('fishType')?.value||'', d=SOP_PROJECT[fish];
+  if(!d){alert('Pilih Jenis Ikan terlebih dahulu.');return;}
+  const required=[['projectName','Nama Project'],['startDate','Tanggal Mulai / DOC 0'],['poolCount','Jumlah Kolam'],['height','Tinggi Air'],['seedWeight','Bobot Awal'],['targetHarvestWeight','Target Bobot Panen']];
+  const type=$('poolType')?.value;
+  if(type==='Kolam Bundar') required.push(['diameter','Diameter Kolam']); else required.push(['length','Panjang Kolam'],['width','Lebar Kolam']);
+  for(const [id,label] of required){if(!String($(id)?.value||'').trim()){alert('Isi '+label+' terlebih dahulu sebelum Terapkan SOP.');$(id)?.focus();return;}}
+  const sw=N($('seedWeight').value), tw=N($('targetHarvestWeight').value), adg=masterSopAdg(d);
+  if(sw<=0||tw<=0||tw<=sw){alert('Target Bobot Panen harus lebih besar dari Bobot Awal.');$('targetHarvestWeight')?.focus();return;}
+  if(!adg){alert('ADG SOP tidak valid.');return;}
+
+  // Master SOP jenis ikan
+  $('cultivationSystem').value=d.system;
+  $('density').value=d.density;
+  $('targetFcr').value=d.fcr;
+  $('duration').value=Math.ceil((tw-sw)/adg);
+
+  // C/N hanya Bioflok; default bahan sesuai instruksi, tetap editable setelah terisi.
+  if(d.system==='Bioflok'){
+    if($('enzymName'))$('enzymName').value='Aqua Enzym'; if($('enzymPrice'))$('enzymPrice').value=70000; if($('enzymPack'))$('enzymPack').value=500; if($('enzymMeasure'))$('enzymMeasure').value='g';
+    if($('nitroName'))$('nitroName').value='Nitrobacter'; if($('nitroPrice'))$('nitroPrice').value=30000; if($('nitroPack'))$('nitroPack').value=100;
+    if($('enzymDoseEarly'))$('enzymDoseEarly').value=2;
+    if($('enzymDoseLate'))$('enzymDoseLate').value=.5;
+    if($('nitroDoseEarly'))$('nitroDoseEarly').value=0;
+    if($('nitroDoseLate'))$('nitroDoseLate').value=.5; if($('nitroMeasure'))$('nitroMeasure').value='g';
+    if($('sugarPrice'))$('sugarPrice').value=18000; if($('sugarPack'))$('sugarPack').value=1000; if($('sugarMeasure'))$('sugarMeasure').value='g';
+    if($('carbonSource')&&!$('carbonSource').value)$('carbonSource').value='Gula Pasir';
+    applyCarbonSource(true);
+  }
+
+  applyAutoCnElectric();
+  calcCapacity();
+  updateSystemUI();
+  renderSopProjectCard();
+
+  // Terapkan SOP juga menyimpan baseline project sehingga seluruh modul membaca sumber data yang sama.
+  // Tidak memaksa pengguna pindah halaman; tombol Simpan & Hitung tetap tersedia untuk perubahan manual lanjutan.
+  const s={}; document.querySelectorAll('#setup input,#setup select').forEach(e=>{if(e.id)s[e.id]=e.value});
+  const metrics=projectPoolMetrics();
+  s.area=metrics.area; s.volume=metrics.volume;
+  s.seedCount=N(s.actualSeedCount)>0?N(s.actualSeedCount):((d.system==='Bioflok'||d.system==='Konvensional + Filtrasi')?metrics.volume*d.density:metrics.area*d.density);
+  s.sopSeedCount=s.seedCount; s.extraCn=getExtraCn();
+  s.sopApplied=true; s.sopFish=fish; s.sopAdg=adg; s.sopControl=d.control; s.sopSr=d.sr;
+  P().name=s.projectName||P().name||'Project'; P().setup=s; P().actual=P().actual||{}; save();
+  refreshProjects();
+  renderDashboard(); renderDaily(); renderActivity(); renderCN(); renderFinance(); renderSummary(); syncSystemModules();
+}
+</script>
+<script id="professional-sop-2026">
+// === PROFESSIONAL SOP SPECIFICATION 2026 ===
+// Source of truth: jenis ikan + sistem + bobot awal + target panen.
+const SOP_PRO={
+ 'Nila':{
+   'Bioflok':{adg:2.3,fcr:1.10,density:100,unit:'ekor/m³',seed:10,target:330,sr:90},
+   'Konvensional':{adg:2.0,fcr:1.40,density:15,unit:'ekor/m²',seed:10,target:330,sr:90}
+ },
+ 'Lele':{
+   'Bioflok':{adg:1.8,fcr:1.00,density:250,unit:'ekor/m³',seed:8,target:150,sr:85},
+   'Konvensional':{adg:1.5,fcr:1.30,density:150,unit:'ekor/m²',seed:8,target:150,sr:85}
+ },
+ 'Bawal':{'Konvensional':{adg:3.0,fcr:1.35,density:15,unit:'ekor/m²',seed:20,target:500,sr:85}},
+ 'Gurame':{'Konvensional':{adg:2.0,fcr:1.60,density:7,unit:'ekor/m²',seed:75,target:700,sr:85}},
+ 'Mas':{'Konvensional':{adg:3.0,fcr:1.35,density:15,unit:'ekor/m²',seed:30,target:400,sr:85}},
+ 'Koi':{'Konvensional + Filtrasi':{adg:null,fcr:1.50,density:7,unit:'ekor/m³',seed:null,target:null,sr:85,koi:true}},
+ 'Nilem':{'Konvensional':{adg:1.5,fcr:1.50,density:15,unit:'ekor/m²',seed:10,target:200,sr:85}}
+};
+function proSystems(fish){return Object.keys(SOP_PRO[fish]||{});}
+function proSop(){let fish=$('fishType')?.value||S().fishType||'';let sys=$('cultivationSystem')?.value||S().cultivationSystem||'';return SOP_PRO[fish]?.[sys]||null;}
+function configureSystemChoices(){
+ const fish=$('fishType')?.value||'', sel=$('cultivationSystem'); if(!sel||!fish)return;
+ const allowed=proSystems(fish); if(!allowed.length)return;
+ [...sel.options].forEach(o=>o.disabled=!allowed.includes(o.value));
+ if(!allowed.includes(sel.value))sel.value=allowed[0];
+ updateSystemUI(); recalcProfessionalSop(false);
+}
+function recalcProfessionalSop(render=true){
+ const d=proSop(), sw=N($('seedWeight')?.value), tw=N($('targetHarvestWeight')?.value);
+ if(!d)return;
+ if($('density'))$('density').value=d.density;
+ if($('targetFcr'))$('targetFcr').value=d.fcr.toFixed(2);
+ if(d.adg && sw>0 && tw>sw && $('duration'))$('duration').value=Math.ceil((tw-sw)/d.adg);
+ else if($('duration') && (!sw||!tw||tw<=sw))$('duration').value='';
+ if(render){calcCapacity();renderSopProjectCard();}
+}
+renderSopProjectCard=function(){
+ const fish=$('fishType')?.value||S().fishType||'', sys=$('cultivationSystem')?.value||S().cultivationSystem||'', box=$('sopProjectCard'); if(!box)return;
+ const d=SOP_PRO[fish]?.[sys];
+ if(!d){box.innerHTML='<div class="subhead">📘 Terapkan SOP</div><div class="hint">Pilih Jenis Ikan dan Sistem Budidaya yang tersedia.</div>';return;}
+ const sw=N($('seedWeight')?.value),tw=N($('targetHarvestWeight')?.value),days=d.adg&&tw>sw?Math.ceil((tw-sw)/d.adg):0;
+ box.innerHTML=`<div class="subhead">📘 SOP ${fish} — ${sys}</div>
+ <p class="note"><b>Master SOP:</b> ADG ${d.adg?F(d.adg)+' g/hari':'khusus grade/ukuran'} • Padat Tebar ${F(d.density)} ${d.unit} • Target FCR ${F(d.fcr)}${d.koi?'*':''}</p>
+ <div class="grid g3" style="margin-top:12px"><div class="mini-stat"><small>Lama Budidaya Otomatis</small><b>${days?F(days)+' hari':'-'}</b></div><div class="mini-stat"><small>Padat Tebar Otomatis</small><b>${F(d.density)} ${d.unit}</b></div><div class="mini-stat"><small>Target FCR SOP <span style="font-weight:600;color:#789">(dapat diedit)</span></small><input id="sopCardFcrEdit" type="number" min="0.01" step="0.01" value="${N($('targetFcr')?.value)||N(S().targetFcr)||N(d.fcr)}" oninput="if($('targetFcr'))$('targetFcr').value=this.value" onchange="updateFcrFromSopCard(this.value)" onblur="updateFcrFromSopCard(this.value)"  style="width:100%;margin-top:5px;border:0;background:transparent;color:#123d62;font-size:21px;font-weight:900;outline:none;padding:0"></div></div>
+ <p class="note" style="margin-top:10px">Lama budidaya = CEIL((Target Bobot Panen − Bobot Awal) ÷ ADG SOP). Target FCR otomatis berasal dari master jenis ikan + sistem setelah Terapkan SOP dan dapat diedit langsung. Setelah nilai FCR diubah, aplikasi menghitung ulang seluruh proyeksi yang bergantung pada FCR. <b>Data aktual yang sudah dicatat tetap dipertahankan</b>, dan FCR Aktual tetap dihitung dari realisasi.</p>
+ ${d.koi?'<div class="hint">Koi diperlakukan khusus: panjang, body conformation, warna/pattern dan grade adalah KPI utama; bobot/ADG/FCR hanya indikator pendukung.</div>':''}
+ <button type="button" class="btn g" style="margin-top:10px" onclick="applySopPreset()">Terapkan SOP ${fish} — ${sys}</button>`;
+};
+applySopPreset=function(){
+ const fish=$('fishType')?.value||''; configureSystemChoices(); const sys=$('cultivationSystem')?.value||'',d=SOP_PRO[fish]?.[sys];
+ if(!d){alert('Pilih Jenis Ikan dan Sistem Budidaya terlebih dahulu.');return;}
+ const req=[['projectName','Nama Project'],['startDate','Tanggal Mulai / DOC 0'],['poolCount','Jumlah Kolam'],['height','Tinggi Air']];
+ if(!d.koi)req.push(['seedWeight','Bobot Awal'],['targetHarvestWeight','Target Bobot Panen']);
+ const type=$('poolType')?.value; if(type==='Kolam Bundar')req.push(['diameter','Diameter Kolam']);else req.push(['length','Panjang Kolam'],['width','Lebar Kolam']);
+ for(const [id,label] of req){if(!String($(id)?.value||'').trim()){alert('Isi '+label+' terlebih dahulu.');$(id)?.focus();return;}}
+ const sw=N($('seedWeight')?.value),tw=N($('targetHarvestWeight')?.value); if(!d.koi&&tw<=sw){alert('Target Bobot Panen harus lebih besar dari Bobot Awal.');return;}
+ $('density').value=d.density;$('targetFcr').value=d.fcr.toFixed(2); if(d.adg)$('duration').value=Math.ceil((tw-sw)/d.adg);
+ if(sys==='Bioflok'){
+  [['enzym',70000,500],['nitro',30000,100],['sugar',18000,1000],['molase',50000,5000]].forEach(([k,p,q])=>{if($(k+'Price'))$(k+'Price').value=p;if($(k+'Pack'))$(k+'Pack').value=q;if($(k+'Measure'))$(k+'Measure').value='g';});
+ }
+ applyAutoCnElectric();updateSystemUI();calcCapacity();renderSopProjectCard();
+};
+// Save without forcing species to an obsolete single system; store SOP snapshot.
+saveSetup=function(){
+ const editedTargetFcr=N($('sopCardFcrEdit')?.value)||N($('targetFcr')?.value);
+
+ [1,2,3].forEach(i=>{let e=$('feed'+i+'Name');if(e&&e.value==='__manual__'){let n=$('feed'+i+'ManualName')?.value||'';if(n){let o=document.createElement('option');o.value=n;o.textContent=n;e.appendChild(o);e.value=n}}});
+ if(!db.active||!db.projects[db.active]){let k='p'+Date.now()+'_'+Math.random().toString(36).slice(2,6);db.projects[k]={name:'Project Baru',setup:{},actual:{}};db.active=k}
+ let s={};document.querySelectorAll('#setup input,#setup select').forEach(e=>{if(e.id)s[e.id]=e.value});
+ if(!s.projectName?.trim()){alert('Nama Project wajib diisi.');return} if(!s.startDate){alert('Tanggal Mulai / DOC 0 wajib diisi.');return} if(!s.fishType){alert('Jenis Ikan wajib dipilih.');return}
+ const d=SOP_PRO[s.fishType]?.[s.cultivationSystem]; if(!d){alert('Sistem budidaya tidak sesuai master SOP jenis ikan.');return}
+ if(!d.koi&&(N(s.seedWeight)<=0||N(s.targetHarvestWeight)<=N(s.seedWeight))){alert('Bobot awal dan Target Bobot Panen belum valid.');return}
+ recalcProfessionalSop(false);
+ /* recalcProfessionalSop mengisi ulang default SOP. FCR hasil edit pengguna harus menang. */
+ if(editedTargetFcr>0)$('targetFcr').value=editedTargetFcr;
+ s.duration=$('duration').value;
+ s.density=$('density').value;
+ s.targetFcr=editedTargetFcr>0?String(editedTargetFcr):$('targetFcr').value;
+ if(!d.koi&&N(s.duration)<=0){alert('Lama budidaya belum dapat dihitung.');return}
+ const m=projectPoolMetrics();s.area=m.area;s.volume=m.volume;s.sopSeedCount=(s.cultivationSystem==='Bioflok'||s.cultivationSystem==='Konvensional + Filtrasi')?m.volume*d.density:m.area*d.density;s.seedCount=N(s.actualSeedCount)>0?N(s.actualSeedCount):s.sopSeedCount;if(N(s.seedCount)<=0){alert('Jumlah tebar masih 0.');return}
+ s.extraCn=getExtraCn();s.targetSR=d.sr;s.sopApplied=true;s.sopSnapshot={fish:s.fishType,system:s.cultivationSystem,adg:d.adg,fcrMaster:d.fcr,fcrTarget:N(s.targetFcr),density:d.density,densityUnit:d.unit,seedDefault:d.seed,targetDefault:d.target,targetSR:d.sr,appliedAt:new Date().toISOString()};
+ if(s.cultivationSystem!=='Bioflok'){s.extraCn=[];}
+ db.projects[db.active].name=s.projectName;db.projects[db.active].setup=s;db.projects[db.active].actual=db.projects[db.active].actual||{};save();
+ if($('targetFcr'))$('targetFcr').value=s.targetFcr;
+ if($('sopCardFcrEdit'))$('sopCardFcrEdit').value=s.targetFcr;
+ refreshAll();go('dashboard');
+};
+// Bind professional reactive logic after UI exists.
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+  const fish=$('fishType'),sys=$('cultivationSystem'),sw=$('seedWeight'),tw=$('targetHarvestWeight');
+  fish?.addEventListener('change',configureSystemChoices);sys?.addEventListener('change',()=>{configureSystemChoices();syncSystemModules()});sw?.addEventListener('input',()=>recalcProfessionalSop());tw?.addEventListener('input',()=>recalcProfessionalSop());
+  configureSystemChoices();syncSystemModules();
+ },50);
+});
+
+function updateFcrFromSopCard(v){
+  const f=N(v);
+  if(!(f>0))return;
+  if($('targetFcr'))$('targetFcr').value=f;
+  if(db.active&&db.projects[db.active]){
+    const p=db.projects[db.active];
+    p.setup=p.setup||{};
+    p.setup.targetFcr=String(f);
+    save();
+    try{renderDashboard()}catch(e){}
+    try{renderDaily()}catch(e){}
+    try{renderActivity()}catch(e){}
+    try{renderCN()}catch(e){}
+    try{renderFinance()}catch(e){}
+    try{renderSummary()}catch(e){}
+  }
+}
+</script>
+
+<script id="password-show-hide-script">
+function toggleAuthPassword(){
+  const input=document.getElementById('authPassword');
+  const btn=document.getElementById('passwordToggle');
+  if(!input||!btn) return;
+  const show=input.type==='password';
+  input.type=show?'text':'password';
+  btn.innerHTML=show?'🙈 <span>Hide</span>':'👁 <span>Show</span>';
+  btn.setAttribute('aria-label',show?'Sembunyikan password':'Tampilkan password');
+  btn.title=show?'Sembunyikan password':'Tampilkan password';
+  input.focus();
+}
+</script>
+
+</body></html>
